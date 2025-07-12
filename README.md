@@ -3,4 +3,4 @@
 SwiftUI portfolio in progress..
 
 ### URL:
-https://lautaropinto.github.io/basic-portfolio/
+https://adrielcelsorosales.github.io/lautaro/
