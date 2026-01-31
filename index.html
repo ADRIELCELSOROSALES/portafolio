@@ -600,6 +600,12 @@
             transform: translateX(5px);
         }
 
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
         /* FIX: Placeholder for missing images */
         .project-placeholder {
             width: 100%;
@@ -943,7 +949,7 @@
                 <!-- Access Control Project -->
                 <div class="project-item reverse">
                     <div class="project-image-container">
-                        <img src="./assets/Mockups/AccessControl-portfolio.png" alt="Access Control System" class="project-image">
+                        <img src="./assets/Mockups/access.png" alt="Access Control System" class="project-image">
                     </div>
                     <div class="project-content">
                         <div class="project-header">
@@ -967,12 +973,20 @@
                             <li>Publicado en App Store y Play Store</li>
                         </ul>
 
-                        <a href="[PROJECT_LINK_2]" target="_blank" class="project-link">
-                            Ver en Play Store
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                            </svg>
-                        </a>
+                        <div class="project-links">
+                            <a href="https://play.google.com/store/search?q=access%20control&c=apps&hl=es_US" target="_blank" class="project-link">
+                                Play Store
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                                </svg>
+                            </a>
+                            <a href="https://apps.apple.com/us/app/access-control-app-m%C3%B3vil/id6470677214" target="_blank" class="project-link">
+                                App Store
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
