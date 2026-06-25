@@ -143,6 +143,7 @@
             font-weight: 800;
             letter-spacing: -0.045em;
             line-height: 0.92;
+            padding-bottom: 0.16em;
             margin-bottom: 2.25rem;
             background: linear-gradient(170deg, #ffffff 30%, #9ab8ff 100%);
             -webkit-background-clip: text;
@@ -545,6 +546,22 @@
 
         .proj-link.hi:hover { background: rgba(61, 126, 255, 0.2); }
 
+        /* Android → verde */
+        .proj-link.android {
+            background: rgba(61, 220, 132, 0.1);
+            border-color: rgba(61, 220, 132, 0.3);
+            color: #3ddc84;
+        }
+        .proj-link.android:hover { background: rgba(61, 220, 132, 0.18); border-color: rgba(61, 220, 132, 0.45); color: #5ee6a0; }
+
+        /* iOS → azul */
+        .proj-link.ios {
+            background: rgba(10, 132, 255, 0.1);
+            border-color: rgba(10, 132, 255, 0.32);
+            color: #0a84ff;
+        }
+        .proj-link.ios:hover { background: rgba(10, 132, 255, 0.18); border-color: rgba(10, 132, 255, 0.48); color: #3b9dff; }
+
         .proj-nda {
             padding-top: 1.1rem;
             font-size: 0.78rem;
@@ -894,7 +911,9 @@
                             <span class="tech-tag">Android</span>
                             <span class="tech-tag">iOS</span>
                         </div>
-                        <p class="proj-nda">La documentación de este proyecto es privada.</p>
+                        <div class="action-row">
+                            <a href="https://github.com/ADRIELCELSOROSALES/KMPaplivit" target="_blank" class="proj-link hi">Ver proyecto ↗</a>
+                        </div>
                     </div>
                 </div>
 
@@ -977,6 +996,10 @@
                             <span class="tech-tag">Clean Architecture</span>
                         </div>
                         <p class="proj-nda">La documentación de este proyecto es privada.</p>
+                        <div class="action-row">
+                            <a href="https://play.google.com/store/apps/details?id=labs.encode.clockit" target="_blank" class="proj-link android">Play Store ↗</a>
+                            <a href="https://apps.apple.com/ar/app/clockit/id6474617227" target="_blank" class="proj-link ios">App Store ↗</a>
+                        </div>
                     </div>
                 </div>
 
@@ -1059,8 +1082,8 @@
                             <span class="tech-tag">iOS</span>
                         </div>
                         <div class="action-row">
-                            <a href="https://play.google.com/store/search?q=access%20control&c=apps&hl=es_US" target="_blank" class="proj-link">Play Store ↗</a>
-                            <a href="https://apps.apple.com/us/app/access-control-app-m%C3%B3vil/id6470677214" target="_blank" class="proj-link">App Store ↗</a>
+                            <a href="https://play.google.com/store/search?q=access%20control&c=apps&hl=es_US" target="_blank" class="proj-link android">Play Store ↗</a>
+                            <a href="https://apps.apple.com/us/app/access-control-app-m%C3%B3vil/id6470677214" target="_blank" class="proj-link ios">App Store ↗</a>
                         </div>
                     </div>
                 </div>
@@ -1099,7 +1122,7 @@
                             <span class="tech-tag">Clean Architecture</span>
                         </div>
                         <div class="action-row">
-                            <a href="https://play.google.com/store/search?q=vending%20control&c=apps&hl=es_US" target="_blank" class="proj-link">Play Store ↗</a>
+                            <a href="https://play.google.com/store/search?q=vending%20control&c=apps&hl=es_US" target="_blank" class="proj-link android">Play Store ↗</a>
                         </div>
                     </div>
                 </div>
@@ -1245,6 +1268,10 @@
                             <span class="tech-tag">DBSCAN</span>
                             <span class="tech-tag">Geohash</span>
                             <span class="tech-tag">Clean Architecture</span>
+                        </div>
+                        <div class="action-row">
+                            <a href="https://github.com/ADRIELCELSOROSALES/MemoriaVial-Android" target="_blank" class="proj-link android">Ver proyecto en Android ↗</a>
+                            <a href="https://github.com/ADRIELCELSOROSALES/MemoriaVial-iOS" target="_blank" class="proj-link ios">Ver proyecto en iOS ↗</a>
                         </div>
                     </div>
                 </div>
