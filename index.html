@@ -829,13 +829,152 @@
 
             <div class="projects-list">
 
-                <!-- 01 Identidad Digital -->
+                <!-- 01 Asistente RAG -->
                 <div class="project-item reveal">
+                    <div class="project-img-wrap">
+                        <div class="project-nda-box">
+                            <div class="nda-icon">🔐</div>
+                            <span class="nda-label">Bajo NDA</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <span class="project-num">01</span>
+                        <h3 class="project-name">Asistente IA / RAG</h3>
+                        <div class="project-meta">
+                            <span class="m-company">Encode Labs</span>
+                            <span class="m-sep">·</span>
+                            <span class="m-period">Septiembre 2026 – Presente</span>
+                            <span class="m-sep">·</span>
+                            <span class="m-role">Lead Tech Front</span>
+                        </div>
+                        <div class="case-row">
+                            <span class="case-label">Contexto</span>
+                            <p>Plataforma multi-tenant de asistentes conversacionales con IA que construimos en Encode Labs. Cada cliente crea sus propios bots, carga su base de conocimiento, define el modelo y los publica. Una sola interfaz responsive que funciona igual en desktop y en mobile.</p>
+                        </div>
+                        <div class="case-row">
+                            <span class="case-label">El problema</span>
+                            <p>Un asistente con IA no sirve si el cliente no puede gobernarlo. Había que exponer en una interfaz usable cosas que normalmente viven en una consola cloud: parámetros de inferencia y recuperación, ingesta e indexado de documentos, permisos por usuario y el costo real que genera cada conversación.</p>
+                        </div>
+                        <div class="case-row">
+                            <span class="case-label">Mi rol</span>
+                            <p>Lidero el front en React 19 y TypeScript: definí la arquitectura de features por responsabilidad que hoy siguen todos los módulos, y los estándares de código que la sostienen. Construí el dashboard de consumo y costos con Recharts, y bajé el diseño de Figma a componentes. Estado de servidor con TanStack Query y validación con Zod en cada borde de API.</p>
+                        </div>
+                        <div class="tech-row">
+                            <span class="tech-tag">React 19</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Vite</span>
+                            <span class="tech-tag">TanStack Query</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">shadcn/ui</span>
+                            <span class="tech-tag">Zod</span>
+                            <span class="tech-tag">Recharts</span>
+                            <span class="tech-tag">RAG</span>
+                            <span class="tech-tag">AWS Bedrock</span>
+                        </div>
+                        <p class="proj-nda">La documentación de este proyecto es privada.</p>
+                    </div>
+                </div>
+
+                <!-- 02 Reverso -->
+                <div class="project-item rev reveal">
+                    <div class="project-img-wrap">
+                        <img src="./assets/Mockups/reverso.png" alt="Reverso — auditoría de apps móviles" class="project-img">
+                    </div>
+                    <div class="project-body">
+                        <span class="project-num">02</span>
+                        <h3 class="project-name">Reverso</h3>
+                        <div class="project-meta">
+                            <span class="m-company">Proyecto propio</span>
+                            <span class="m-sep">·</span>
+                            <span class="m-period">Agosto 2026 – Presente</span>
+                            <span class="m-sep">·</span>
+                            <span class="m-role">Creador y desarrollador</span>
+                        </div>
+                        <div class="case-row">
+                            <span class="case-label">Contexto</span>
+                            <p>App de escritorio para macOS que automatiza la ingeniería inversa y la auditoría de seguridad de apps móviles. Descompila un APK —desde un archivo o directamente desde un teléfono conectado, pegando el link de Play Store— corre el análisis y devuelve un reporte en web y PDF.</p>
+                        </div>
+                        <div class="case-row">
+                            <span class="case-label">El problema</span>
+                            <p>Auditar una app a mano es encadenar herramientas sueltas (apktool, jadx, adb), leer miles de líneas de código decompilado y después traducir todo eso a un informe que entienda alguien que no es ingeniero de seguridad. Cada auditoría eran días de trabajo repetitivo y difícil de reproducir.</p>
+                        </div>
+                        <div class="case-row">
+                            <span class="case-label">Mi rol</span>
+                            <p>Diseñé y construí la herramienta completa: la app de escritorio en SwiftUI con terminal embebida y progreso en vivo, y el motor en Python que orquesta la decompilación y ejecuta diez bloques de análisis —metadata, permisos y componentes, secretos embebidos, TLS, criptografía, almacenamiento y WebView, anti-tampering, SDKs de terceros, framework y logging—. La IA interpreta los hallazgos y redacta el reporte. Acceso restringido con Sign in with Google y lista blanca de cuentas.</p>
+                        </div>
+                        <div class="tech-row">
+                            <span class="tech-tag">Swift</span>
+                            <span class="tech-tag">SwiftUI</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Reverse Engineering</span>
+                            <span class="tech-tag">apktool</span>
+                            <span class="tech-tag">jadx</span>
+                            <span class="tech-tag">adb</span>
+                            <span class="tech-tag">OAuth 2.0</span>
+                            <span class="tech-tag">Claude API</span>
+                        </div>
+                        <div class="action-row">
+                            <a href="https://www.linkedin.com/posts/adriel-rosales_cybersecurity-mobilesecurity-reverseengineering-ugcPost-7500578952587939840-wKM5/" target="_blank" class="proj-link hi">Ver publicación ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 03 Essentid Wallet -->
+                <div class="project-item reveal">
+                    <div class="project-img-wrap">
+                        <div class="project-nda-box">
+                            <div class="nda-icon">🔐</div>
+                            <span class="nda-label">Bajo NDA</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <span class="project-num">03</span>
+                        <h3 class="project-name">Essentid Wallet</h3>
+                        <div class="project-meta">
+                            <span class="m-company">Encode Labs</span>
+                            <span class="m-sep">·</span>
+                            <span class="m-period">Julio 2026 – Presente</span>
+                            <span class="m-sep">·</span>
+                            <span class="m-role">Mobile Lead</span>
+                        </div>
+                        <div class="case-row">
+                            <span class="case-label">Contexto</span>
+                            <p>Wallet de identidad, pagos y beneficios en dos apps nativas independientes: Android en Kotlin con Jetpack Compose e iOS en Swift con SwiftUI. Guarda credenciales verificables W3C, lee el chip NFC del DNI y el pasaporte, gestiona pagos en cuotas, entradas, beneficios y el mapa de locales adheridos.</p>
+                        </div>
+                        <div class="case-row">
+                            <span class="case-label">El problema</span>
+                            <p>Decidir si el port a iOS iba con una codebase compartida o con dos nativas. Medí el repo Android: solo 4.5k de 23.2k líneas (19%) eran realmente compartibles, y la criptografía ni siquiera vive en la app —la wallet-api firma—. Lo caro es el hardware (NFC, cámara, OCR, almacenamiento seguro) y eso hay que rehacerlo nativo en cualquier escenario.</p>
+                        </div>
+                        <div class="case-row">
+                            <span class="case-label">Mi rol</span>
+                            <p>Descarté Kotlin Multiplatform con los números sobre la mesa y construí las dos apps. El resultado en iOS es una sola dependencia de terceros contra unas veinte en Android: Vision reemplaza a ML Kit para leer el MRZ, VisionKit al document scanner, Keychain con Secure Enclave al AES-GCM y PBKDF2 escritos a mano, y MapKit a los 41 MB de MapLibre. Lectura de eMRTD por NFC, presentación de credenciales con OID4VP, gate biométrico y 198 tests portados.</p>
+                        </div>
+                        <div class="tech-row">
+                            <span class="tech-tag">Kotlin</span>
+                            <span class="tech-tag">Jetpack Compose</span>
+                            <span class="tech-tag">Swift</span>
+                            <span class="tech-tag">SwiftUI</span>
+                            <span class="tech-tag">NFC / eMRTD</span>
+                            <span class="tech-tag">W3C Verifiable Credentials</span>
+                            <span class="tech-tag">OID4VP</span>
+                            <span class="tech-tag">Keychain / Secure Enclave</span>
+                            <span class="tech-tag">Ktor</span>
+                            <span class="tech-tag">Vision / VisionKit</span>
+                            <span class="tech-tag">MapKit / MapLibre</span>
+                        </div>
+                        <div class="action-row">
+                            <a href="https://github.com/ADRIELCELSOROSALES/walletVC" target="_blank" class="proj-link android">Ver proyecto en Android ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 01 Identidad Digital -->
+                <div class="project-item rev reveal">
                     <div class="project-img-wrap">
                         <img src="./assets/Mockups/identidaddigital.png" alt="Identidad Digital & KYC" class="project-img">
                     </div>
                     <div class="project-body">
-                        <span class="project-num">01</span>
+                        <span class="project-num">04</span>
                         <h3 class="project-name">Identidad Digital & KYC</h3>
                         <div class="project-meta">
                             <span class="m-company">Encode Labs</span>
@@ -871,7 +1010,7 @@
                 </div>
 
                 <!-- 02 Aplivit -->
-                <div class="project-item rev reveal">
+                <div class="project-item reveal">
                     <div class="project-img-wrap">
                         <div class="project-nda-box">
                             <div class="nda-icon">🔐</div>
@@ -879,14 +1018,14 @@
                         </div>
                     </div>
                     <div class="project-body">
-                        <span class="project-num">02</span>
+                        <span class="project-num">05</span>
                         <h3 class="project-name">Aplivit</h3>
                         <div class="project-meta">
                             <span class="m-company">Vocational Training Foundation USA</span>
                             <span class="m-sep">·</span>
                             <span class="m-period">Enero 2026 – Presente</span>
                             <span class="m-sep">·</span>
-                            <span class="m-role">Mobile Developer</span>
+                            <span class="m-role">Mobile Lead</span>
                         </div>
                         <div class="case-row">
                             <span class="case-label">Contexto</span>
@@ -915,12 +1054,12 @@
                 </div>
 
                 <!-- 03 Multas Digital -->
-                <div class="project-item reveal">
+                <div class="project-item rev reveal">
                     <div class="project-img-wrap">
                         <img src="./assets/Mockups/multas.png" alt="Multas Digital" class="project-img">
                     </div>
                     <div class="project-body">
-                        <span class="project-num">03</span>
+                        <span class="project-num">06</span>
                         <h3 class="project-name">Multas Digital</h3>
                         <div class="project-meta">
                             <span class="m-company">Encode Labs</span>
@@ -953,12 +1092,12 @@
                 </div>
 
                 <!-- 04 Clockit -->
-                <div class="project-item rev reveal">
+                <div class="project-item reveal">
                     <div class="project-img-wrap">
                         <img src="./assets/Mockups/clockit.png" alt="Clockit" class="project-img">
                     </div>
                     <div class="project-body">
-                        <span class="project-num">04</span>
+                        <span class="project-num">07</span>
                         <h3 class="project-name">Clockit</h3>
                         <div class="project-meta">
                             <span class="m-company">Encode Labs</span>
@@ -995,21 +1134,21 @@
                 </div>
 
                 <!-- 05 Phoenix -->
-                <div class="project-item reveal">
+                <div class="project-item rev reveal">
                     <div class="project-img-wrap">
                         <a href="https://accesscontrol.biz/metodos-de-control-de-acceso/" target="_blank">
                             <img src="./assets/Mockups/phoenix1.png" alt="Phoenix" class="project-img">
                         </a>
                     </div>
                     <div class="project-body">
-                        <span class="project-num">05</span>
+                        <span class="project-num">08</span>
                         <h3 class="project-name">Phoenix</h3>
                         <div class="project-meta">
                             <span class="m-company">Control Global</span>
                             <span class="m-sep">·</span>
                             <span class="m-period">2024 – Enero 2026</span>
                             <span class="m-sep">·</span>
-                            <span class="m-role">Mobile Lead</span>
+                            <span class="m-role">Mobile Engineer</span>
                         </div>
                         <div class="case-row">
                             <span class="case-label">Contexto</span>
@@ -1039,19 +1178,19 @@
                 </div>
 
                 <!-- 06 Migración -->
-                <div class="project-item rev reveal">
+                <div class="project-item reveal">
                     <div class="project-img-wrap">
                         <img src="./assets/Mockups/access.png" alt="Access Control" class="project-img">
                     </div>
                     <div class="project-body">
-                        <span class="project-num">06</span>
+                        <span class="project-num">09</span>
                         <h3 class="project-name">Migración de Plataforma</h3>
                         <div class="project-meta">
                             <span class="m-company">Control Global</span>
                             <span class="m-sep">·</span>
                             <span class="m-period">2024 – 2025</span>
                             <span class="m-sep">·</span>
-                            <span class="m-role">Mobile Developer</span>
+                            <span class="m-role">Mobile Engineer</span>
                         </div>
                         <div class="case-row">
                             <span class="case-label">Contexto</span>
@@ -1080,19 +1219,19 @@
                 </div>
 
                 <!-- 07 Vending -->
-                <div class="project-item reveal">
+                <div class="project-item rev reveal">
                     <div class="project-img-wrap">
                         <img src="./assets/Mockups/vending.png" alt="Vending Control" class="project-img">
                     </div>
                     <div class="project-body">
-                        <span class="project-num">07</span>
+                        <span class="project-num">10</span>
                         <h3 class="project-name">Vending Control</h3>
                         <div class="project-meta">
                             <span class="m-company">Control Global</span>
                             <span class="m-sep">·</span>
                             <span class="m-period">2024</span>
                             <span class="m-sep">·</span>
-                            <span class="m-role">Android Developer</span>
+                            <span class="m-role">Mobile Engineer</span>
                         </div>
                         <div class="case-row">
                             <span class="case-label">Contexto</span>
@@ -1119,19 +1258,19 @@
                 </div>
 
                 <!-- 08 Gate Keeper -->
-                <div class="project-item rev reveal">
+                <div class="project-item reveal">
                     <div class="project-img-wrap">
                         <img src="./assets/Mockups/gk.png" alt="Gate Keeper" class="project-img">
                     </div>
                     <div class="project-body">
-                        <span class="project-num">08</span>
+                        <span class="project-num">11</span>
                         <h3 class="project-name">Gate Keeper</h3>
                         <div class="project-meta">
                             <span class="m-company">Control Global</span>
                             <span class="m-sep">·</span>
                             <span class="m-period">2024</span>
                             <span class="m-sep">·</span>
-                            <span class="m-role">Developer</span>
+                            <span class="m-role">Mobile Engineer</span>
                         </div>
                         <div class="case-row">
                             <span class="case-label">Contexto</span>
@@ -1152,12 +1291,12 @@
                 </div>
 
                 <!-- 09 Banking -->
-                <div class="project-item reveal">
+                <div class="project-item rev reveal">
                     <div class="project-img-wrap">
                         <img src="./assets/Mockups/bank menu-Photoroom.png" alt="App Bancaria" class="project-img">
                     </div>
                     <div class="project-body">
-                        <span class="project-num">09</span>
+                        <span class="project-num">12</span>
                         <h3 class="project-name">App Bancaria</h3>
                         <div class="project-meta">
                             <span class="m-company">Freelance</span>
@@ -1185,12 +1324,12 @@
                 </div>
 
                 <!-- 10 ChatBot -->
-                <div class="project-item rev reveal">
+                <div class="project-item reveal">
                     <div class="project-img-wrap">
                         <img src="./assets/Mockups/ChatBot.png" alt="ChatBot con IA" class="project-img">
                     </div>
                     <div class="project-body">
-                        <span class="project-num">10</span>
+                        <span class="project-num">13</span>
                         <h3 class="project-name">ChatBot con IA</h3>
                         <div class="project-meta">
                             <span class="m-company">Freelance Internacional</span>
@@ -1220,12 +1359,12 @@
                 </div>
 
                 <!-- 11 CVP -->
-                <div class="project-item reveal">
+                <div class="project-item rev reveal">
                     <div class="project-img-wrap">
                         <img src="./assets/Mockups/capavial.png" alt="Capa Vial Predictiva" class="project-img">
                     </div>
                     <div class="project-body">
-                        <span class="project-num">11</span>
+                        <span class="project-num">14</span>
                         <h3 class="project-name">Capa Vial Predictiva</h3>
                         <div class="project-meta">
                             <span class="m-company">Proyecto Personal</span>
