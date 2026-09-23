@@ -10,8 +10,7 @@ Este repositorio contiene el código fuente de mi portfolio web, donde presento 
 ## 🌐 Demo en vivo
 
 👉 **Portfolio online:**  
-https://adrielcelsorosales.github.io/portafolio/
-
+\
 ---
 
 ## 🧠 Sobre mí
