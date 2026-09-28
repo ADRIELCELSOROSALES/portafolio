@@ -46,67 +46,8 @@
         }
 
         section {
-            scroll-margin-top: 60px;
             position: relative;
             z-index: 1;
-        }
-
-        /* ─── NAV ────────────────────────────────── */
-        .nav {
-            position: fixed;
-            inset: 0 0 auto;
-            z-index: 200;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 2.5rem;
-            height: 60px;
-            background: rgba(12, 13, 24, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav-logo {
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-            color: var(--text-1);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 0.15rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-size: 0.85rem;
-            color: var(--text-2);
-            text-decoration: none;
-            padding: 0.35rem 0.8rem;
-            border-radius: 6px;
-            transition: color 0.15s, background 0.15s;
-        }
-
-        .nav-links a:hover { color: var(--text-1); background: var(--surface); }
-
-        .nav-cv {
-            padding: 0.4rem 1rem !important;
-            background: var(--blue-dim) !important;
-            border: 1px solid rgba(61, 126, 255, 0.28) !important;
-            color: var(--blue) !important;
-            font-weight: 600 !important;
-            border-radius: 7px !important;
-        }
-
-        .nav-cv:hover { background: rgba(61, 126, 255, 0.22) !important; }
-
-        @media (max-width: 700px) {
-            .nav-links li:not(:last-child) { display: none; }
-            .nav { padding: 0 1.25rem; }
         }
 
         /* ─── HERO ───────────────────────────────── */
@@ -723,7 +664,7 @@
         /* ─── COPY NOTIF ──────────────────────────── */
         .copy-notif {
             position: fixed;
-            top: 4.5rem;
+            top: 1.5rem;
             right: 1.5rem;
             background: var(--bg-raised);
             border: 1px solid var(--border);
@@ -754,17 +695,6 @@
 
     <!-- Fondo fijo — Vanta NET corre aquí durante todo el scroll -->
     <div id="vanta-bg"></div>
-
-    <!-- NAV -->
-    <nav class="nav">
-        <a href="#home" class="nav-logo">Adriel Rosales</a>
-        <ul class="nav-links">
-            <li><a href="#projects">Proyectos</a></li>
-            <li><a href="#stack">Stack</a></li>
-            <li><a href="#about">Sobre mí</a></li>
-            <li><a href="#contact">Contacto</a></li>
-        </ul>
-    </nav>
 
     <!-- HERO — Vanta NET fills this element -->
     <section id="home" class="hero">
@@ -1155,7 +1085,7 @@
                         <div class="project-meta">
                             <span class="m-company">Control Global</span>
                             <span class="m-sep">·</span>
-                            <span class="m-period">2024 – Enero 2026</span>
+                            <span class="m-period">2024 – 2025</span>
                             <span class="m-sep">·</span>
                             <span class="m-role">Mobile Engineer</span>
                         </div>
@@ -1444,7 +1374,7 @@
                 </div>
                 <div class="stack-card reveal">
                     <span class="cat-label">Backend & Cloud</span>
-                    <p class="cat-items">AWS · Azure · Huawei Cloud · Google Cloud · Firebase · APIs RESTful · WebSockets · OCR · Multi-tenancy</p>
+                    <p class="cat-items">AWS · Huawei Cloud · Google Cloud · Firebase · APIs RESTful · WebSockets · OCR · Multi-tenancy</p>
                 </div>
                 <div class="stack-card reveal">
                     <span class="cat-label">Seguridad</span>
