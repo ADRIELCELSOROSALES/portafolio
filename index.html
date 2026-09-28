@@ -408,13 +408,17 @@
         }
 
         .project-img {
-            width: 100%;
-            max-width: 440px;
+            width: auto;
+            max-width: min(440px, 100%);
+            max-height: 560px;
             height: auto;
             display: block;
             filter: drop-shadow(0 16px 48px rgba(0, 0, 0, 0.65));
             transition: filter 0.4s;
         }
+
+        /* Imágenes de baja resolución: estirar al ancho de la columna */
+        .project-img.fill { width: 100%; }
 
         .project-img:hover { filter: drop-shadow(0 20px 56px rgba(61, 126, 255, 0.22)); }
 
@@ -839,7 +843,7 @@
                     </div>
                     <div class="project-body">
                         <span class="project-num">01</span>
-                        <h3 class="project-name">Asistente IA / RAG</h3>
+                        <h3 class="project-name">Asistente IA / RAG — Web App Desktop y Mobile</h3>
                         <div class="project-meta">
                             <span class="m-company">Encode Labs</span>
                             <span class="m-sep">·</span>
@@ -857,7 +861,7 @@
                         </div>
                         <div class="case-row">
                             <span class="case-label">Mi rol</span>
-                            <p>Lidero el front en React 19 y TypeScript: definí la arquitectura de features por responsabilidad que hoy siguen todos los módulos, y los estándares de código que la sostienen. Construí el dashboard de consumo y costos con Recharts, y bajé el diseño de Figma a componentes. Estado de servidor con TanStack Query y validación con Zod en cada borde de API.</p>
+                            <p>Lidero el front web, tanto en desktop como en mobile, con React 19 y TypeScript: definí la arquitectura de features por responsabilidad que hoy siguen todos los módulos, y los estándares de código que la sostienen. Construí el dashboard de consumo y costos con Recharts, y bajé el diseño de Figma a componentes. Estado de servidor con TanStack Query y validación con Zod en cada borde de API.</p>
                         </div>
                         <div class="tech-row">
                             <span class="tech-tag">React 19</span>
@@ -882,7 +886,7 @@
                     </div>
                     <div class="project-body">
                         <span class="project-num">02</span>
-                        <h3 class="project-name">Reverso</h3>
+                        <h3 class="project-name">Reverso — Auditoría de Seguridad de Apps Móviles</h3>
                         <div class="project-meta">
                             <span class="m-company">Proyecto propio</span>
                             <span class="m-sep">·</span>
@@ -929,7 +933,7 @@
                     </div>
                     <div class="project-body">
                         <span class="project-num">03</span>
-                        <h3 class="project-name">Essentid Wallet</h3>
+                        <h3 class="project-name">Wallet Essentid</h3>
                         <div class="project-meta">
                             <span class="m-company">Encode Labs</span>
                             <span class="m-sep">·</span>
@@ -939,15 +943,15 @@
                         </div>
                         <div class="case-row">
                             <span class="case-label">Contexto</span>
-                            <p>Wallet de identidad, pagos y beneficios en dos apps nativas independientes: Android en Kotlin con Jetpack Compose e iOS en Swift con SwiftUI. Guarda credenciales verificables W3C, lee el chip NFC del DNI y el pasaporte, gestiona pagos en cuotas, entradas, beneficios y el mapa de locales adheridos.</p>
+                            <p>Wallet de identidad, pagos y beneficios en dos apps nativas independientes, actualmente en desarrollo: Android en Kotlin con Jetpack Compose e iOS en Swift con SwiftUI. Guarda credenciales verificables W3C, lee el chip NFC del DNI y el pasaporte, gestiona pagos en cuotas, entradas, beneficios y el mapa de locales adheridos.</p>
                         </div>
                         <div class="case-row">
                             <span class="case-label">El problema</span>
-                            <p>Decidir si el port a iOS iba con una codebase compartida o con dos nativas. Medí el repo Android: solo 4.5k de 23.2k líneas (19%) eran realmente compartibles, y la criptografía ni siquiera vive en la app —la wallet-api firma—. Lo caro es el hardware (NFC, cámara, OCR, almacenamiento seguro) y eso hay que rehacerlo nativo en cualquier escenario.</p>
+                            <p>Una wallet de identidad vive del hardware del teléfono: NFC para leer el chip de documentos, cámara y OCR para el MRZ, almacenamiento seguro y biometría. Cada plataforma tiene sus propias APIs para eso, y la app tenía que aprovecharlas al máximo sin cargarse de dependencias de terceros.</p>
                         </div>
                         <div class="case-row">
                             <span class="case-label">Mi rol</span>
-                            <p>Descarté Kotlin Multiplatform con los números sobre la mesa y construí las dos apps. El resultado en iOS es una sola dependencia de terceros contra unas veinte en Android: Vision reemplaza a ML Kit para leer el MRZ, VisionKit al document scanner, Keychain con Secure Enclave al AES-GCM y PBKDF2 escritos a mano, y MapKit a los 41 MB de MapLibre. Lectura de eMRTD por NFC, presentación de credenciales con OID4VP, gate biométrico y 198 tests portados.</p>
+                            <p>Lidero el desarrollo de las dos apps nativas. En iOS la app usa una sola dependencia de terceros contra unas veinte en Android: Vision lee el MRZ, VisionKit escanea documentos, Keychain con Secure Enclave protege las credenciales y MapKit muestra el mapa de locales. Lectura de eMRTD por NFC, presentación de credenciales con OID4VP, gate biométrico y 198 tests.</p>
                         </div>
                         <div class="tech-row">
                             <span class="tech-tag">Kotlin</span>
@@ -962,9 +966,7 @@
                             <span class="tech-tag">Vision / VisionKit</span>
                             <span class="tech-tag">MapKit / MapLibre</span>
                         </div>
-                        <div class="action-row">
-                            <a href="https://github.com/ADRIELCELSOROSALES/walletVC" target="_blank" class="proj-link android">Ver proyecto en Android ↗</a>
-                        </div>
+                        <p class="proj-nda">Proyecto privado, en desarrollo.</p>
                     </div>
                 </div>
 
@@ -975,31 +977,29 @@
                     </div>
                     <div class="project-body">
                         <span class="project-num">04</span>
-                        <h3 class="project-name">Identidad Digital & KYC</h3>
+                        <h3 class="project-name">Identidad Digital & KYC — Verificación de Identidad Web</h3>
                         <div class="project-meta">
                             <span class="m-company">Encode Labs</span>
                             <span class="m-sep">·</span>
                             <span class="m-period">Marzo 2026 – Presente</span>
                             <span class="m-sep">·</span>
-                            <span class="m-role">Mobile Lead</span>
+                            <span class="m-role">Lead Tech Front</span>
                         </div>
                         <div class="case-row">
                             <span class="case-label">Contexto</span>
-                            <p>Sistema de verificación de identidad digital para flujos de onboarding en aplicaciones financieras, disponible en Android e iOS. Procesa documentos de identidad, verifica liveness del usuario y valida información contra registros externos.</p>
+                            <p>Web app de verificación de identidad digital para flujos de onboarding en servicios financieros, construida en React y pensada para usarse desde el navegador del celular o la computadora. Captura el documento de identidad, verifica liveness del usuario y valida la información contra registros externos.</p>
                         </div>
                         <div class="case-row">
                             <span class="case-label">El problema</span>
-                            <p>Los flujos de KYC tradicionales generan fricciones que incrementan el abandono. El cliente necesitaba un flujo nativo, rápido y que cumpliera estándares de seguridad bancaria, incluyendo protección de datos biométricos con cifrado preparado para amenazas post-cuánticas.</p>
+                            <p>Los flujos de KYC tradicionales generan fricciones que incrementan el abandono. El cliente necesitaba un onboarding rápido, sin instalar ninguna app, que cumpliera estándares de seguridad bancaria, incluyendo protección de datos biométricos con cifrado preparado para amenazas post-cuánticas.</p>
                         </div>
                         <div class="case-row">
                             <span class="case-label">Mi rol</span>
-                            <p>Lidero el desarrollo mobile. Implementé captura de documentos con ML Kit (Android) y Vision Framework (iOS), liveness detection, integración con AWS y Huawei Cloud para procesamiento OCR, y cifrado de datos biométricos con algoritmos post-cuánticos (CRYSTALS-Kyber).</p>
+                            <p>Lidero el desarrollo front en React. Implementé la captura de documentos y la liveness detection desde la cámara del navegador, la integración con AWS y Huawei Cloud para procesamiento OCR, y el cifrado de datos biométricos con algoritmos post-cuánticos (CRYSTALS-Kyber).</p>
                         </div>
                         <div class="tech-row">
-                            <span class="tech-tag">Kotlin</span>
-                            <span class="tech-tag">Swift</span>
-                            <span class="tech-tag">ML Kit</span>
-                            <span class="tech-tag">Vision Framework</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Liveness Detection</span>
                             <span class="tech-tag">AWS</span>
                             <span class="tech-tag">Huawei Cloud</span>
                             <span class="tech-tag">OCR</span>
@@ -1019,7 +1019,7 @@
                     </div>
                     <div class="project-body">
                         <span class="project-num">05</span>
-                        <h3 class="project-name">Aplivit</h3>
+                        <h3 class="project-name">Aplivit — App de Educación y Orientación Vocacional</h3>
                         <div class="project-meta">
                             <span class="m-company">Vocational Training Foundation USA</span>
                             <span class="m-sep">·</span>
@@ -1056,11 +1056,11 @@
                 <!-- 03 Multas Digital -->
                 <div class="project-item rev reveal">
                     <div class="project-img-wrap">
-                        <img src="./assets/Mockups/multas.png" alt="Multas Digital" class="project-img">
+                        <img src="./assets/Mockups/multas.png" alt="Multas Digital" class="project-img fill">
                     </div>
                     <div class="project-body">
                         <span class="project-num">06</span>
-                        <h3 class="project-name">Multas Digital</h3>
+                        <h3 class="project-name">Multas Digital — Gestión de Infracciones de Tránsito</h3>
                         <div class="project-meta">
                             <span class="m-company">Encode Labs</span>
                             <span class="m-sep">·</span>
@@ -1070,24 +1070,30 @@
                         </div>
                         <div class="case-row">
                             <span class="case-label">Contexto</span>
-                            <p>Plataforma de gestión de infracciones de tránsito utilizada por organismos gubernamentales. App en producción con base de usuarios activos y flujos críticos de consulta y pago.</p>
+                            <p>Plataforma de gestión de infracciones de tránsito utilizada por organismos gubernamentales, en Android e iOS. App en producción con base de usuarios activos y flujos críticos de labrado de actas, consulta y pago.</p>
                         </div>
                         <div class="case-row">
                             <span class="case-label">El problema</span>
-                            <p>La codebase original en Flutter acumulaba deuda técnica considerable. Faltaba integración con SDKs de terceros y la arquitectura no soportaba el crecimiento planificado del producto.</p>
+                            <p>La app se construyó en Flutter, pero al salir a producción un requisito administrativo exigió que fuera nativa. Había que migrarla a Android e iOS nativos sin frenar la operación de los organismos que ya la usaban.</p>
                         </div>
                         <div class="case-row">
                             <span class="case-label">Mi rol</span>
-                            <p>Lidero el refactoring completo de la app Flutter, definiendo la nueva arquitectura y estándares de código. Integración de SDKs externos para pagos y servicios gubernamentales.</p>
+                            <p>Lidero la migración de Flutter a nativo, en curso: Kotlin en Android y Swift en iOS. Defino la nueva arquitectura y los estándares de código, y porto la integración de SDKs externos para pagos y servicios gubernamentales, manteniendo la versión Flutter en producción mientras avanza la migración.</p>
                         </div>
                         <div class="tech-row">
+                            <span class="tech-tag">Kotlin</span>
+                            <span class="tech-tag">Swift</span>
                             <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">Dart</span>
                             <span class="tech-tag">SDK Integration</span>
                             <span class="tech-tag">Clean Architecture</span>
                             <span class="tech-tag">APIs RESTful</span>
                         </div>
                         <p class="proj-nda">La documentación de este proyecto es privada.</p>
+                        <div class="action-row">
+                            <a href="https://play.google.com/store/apps/details?id=com.encodelabs.fiscacheck&hl=es_AR" target="_blank" class="proj-link android">Play Store ↗</a>
+                            <!-- TODO: cargar enlace de App Store -->
+                            <a href="#" onclick="event.preventDefault()" class="proj-link ios">App Store ↗</a>
+                        </div>
                     </div>
                 </div>
 
@@ -1098,7 +1104,7 @@
                     </div>
                     <div class="project-body">
                         <span class="project-num">07</span>
-                        <h3 class="project-name">Clockit</h3>
+                        <h3 class="project-name">Clockit — Control de Asistencia y Fichaje</h3>
                         <div class="project-meta">
                             <span class="m-company">Encode Labs</span>
                             <span class="m-sep">·</span>
@@ -1108,7 +1114,7 @@
                         </div>
                         <div class="case-row">
                             <span class="case-label">Contexto</span>
-                            <p>App de control de asistencia y fichaje para empresas. Sistema en producción con usuarios activos, desarrollado originalmente por un equipo externo con documentación parcial.</p>
+                            <p>App de control de asistencia y fichaje para empresas, disponible en Android e iOS. Sistema en producción con usuarios activos, desarrollado originalmente en Flutter por un equipo externo con documentación parcial.</p>
                         </div>
                         <div class="case-row">
                             <span class="case-label">El problema</span>
@@ -1116,11 +1122,14 @@
                         </div>
                         <div class="case-row">
                             <span class="case-label">Mi rol</span>
-                            <p>Análisis de seguridad por ingeniería inversa del código existente, identificación de vulnerabilidades y flujos críticos. Refactoring progresivo en Flutter manteniendo la app en producción durante todo el proceso.</p>
+                            <p>Análisis de seguridad por ingeniería inversa del código existente, identificación de vulnerabilidades y flujos críticos. Con eso como base, lidero la migración de Flutter a dos apps nativas: Kotlin con Jetpack Compose en Android y Swift con SwiftUI en iOS, manteniendo la app en producción durante todo el proceso.</p>
                         </div>
                         <div class="tech-row">
+                            <span class="tech-tag">Kotlin</span>
+                            <span class="tech-tag">Jetpack Compose</span>
+                            <span class="tech-tag">Swift</span>
+                            <span class="tech-tag">SwiftUI</span>
                             <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">Dart</span>
                             <span class="tech-tag">Reverse Engineering</span>
                             <span class="tech-tag">Security Analysis</span>
                             <span class="tech-tag">Clean Architecture</span>
@@ -1137,12 +1146,12 @@
                 <div class="project-item rev reveal">
                     <div class="project-img-wrap">
                         <a href="https://accesscontrol.biz/metodos-de-control-de-acceso/" target="_blank">
-                            <img src="./assets/Mockups/phoenix1.png" alt="Phoenix" class="project-img">
+                            <img src="./assets/Mockups/phoenix1.png" alt="Access Control — Terminal de Acceso Biométrico" class="project-img">
                         </a>
                     </div>
                     <div class="project-body">
                         <span class="project-num">08</span>
-                        <h3 class="project-name">Phoenix</h3>
+                        <h3 class="project-name">Access Control — Terminal de Acceso Biométrico</h3>
                         <div class="project-meta">
                             <span class="m-company">Control Global</span>
                             <span class="m-sep">·</span>
@@ -1152,7 +1161,7 @@
                         </div>
                         <div class="case-row">
                             <span class="case-label">Contexto</span>
-                            <p>Sistema empresarial de control de acceso basado en reconocimiento facial, embebido en tablets Android en instalaciones corporativas de más de 8 países de Latinoamérica.</p>
+                            <p>Terminal de control de acceso biométrico por reconocimiento facial, embebida en tablets Android que operan el hardware físico del edificio: barreras, ascensores, sensores e intercomunicadores. Instalada en sedes corporativas de más de 8 países de Latinoamérica.</p>
                         </div>
                         <div class="case-row">
                             <span class="case-label">El problema</span>
@@ -1160,12 +1169,13 @@
                         </div>
                         <div class="case-row">
                             <span class="case-label">Mi rol</span>
-                            <p>Desarrollo del sistema Android desde cero. Definí la arquitectura modular, implementé el módulo de reconocimiento facial, integré WebRTC y SIP para comunicación en tiempo real, y coordiné el despliegue internacional.</p>
+                            <p>Desarrollo del sistema Android desde cero. Definí la arquitectura modular e implementé el reconocimiento facial. Trabajé Kotlin a bajo nivel para controlar el hardware integrado: cámaras en paralelo y comunicación con barreras, ascensores y sensores. Integré WebRTC y SIP para llamadas en tiempo real y coordiné el despliegue internacional.</p>
                         </div>
                         <div class="tech-row">
                             <span class="tech-tag">Kotlin</span>
                             <span class="tech-tag">Jetpack Compose</span>
                             <span class="tech-tag">ML Kit</span>
+                            <span class="tech-tag">Integración de hardware</span>
                             <span class="tech-tag">AWS</span>
                             <span class="tech-tag">WebRTC</span>
                             <span class="tech-tag">SIP</span>
@@ -1184,7 +1194,7 @@
                     </div>
                     <div class="project-body">
                         <span class="project-num">09</span>
-                        <h3 class="project-name">Migración de Plataforma</h3>
+                        <h3 class="project-name">Access Control — App de Gestión de Accesos</h3>
                         <div class="project-meta">
                             <span class="m-company">Control Global</span>
                             <span class="m-sep">·</span>
@@ -1194,20 +1204,22 @@
                         </div>
                         <div class="case-row">
                             <span class="case-label">Contexto</span>
-                            <p>La app Access Control existía como solución multiplataforma en .NET MAUI. A medida que el producto crecía, integrar videollamadas y features avanzadas se convirtió en un cuello de botella estructural.</p>
+                            <p>App móvil de control y gestión de accesos para Android e iOS, conectada al sistema central de aperturas de la empresa. Desde el teléfono el usuario abre puertas y accesos, invita y gestiona visitantes, y se comunica por videollamada con las terminales biométricas de reconocimiento facial.</p>
                         </div>
                         <div class="case-row">
                             <span class="case-label">El problema</span>
-                            <p>MAUI no ofrecía el nivel de control nativo necesario para implementar WebRTC de forma estable. Cada nueva feature requería workarounds que acumulaban deuda técnica y frenaban al equipo.</p>
+                            <p>La primera versión estaba construida en .NET MAUI y no daba el control nativo necesario para correr WebRTC de forma estable ni para integrarse bien con el resto del sistema. Cada feature nueva sumaba workarounds y deuda técnica.</p>
                         </div>
                         <div class="case-row">
                             <span class="case-label">Mi rol</span>
-                            <p>Migración estratégica de componentes clave desde .NET MAUI hacia código nativo. Implementé el módulo WebRTC, contribuí a la estabilización de la nueva plataforma y coordiné la publicación en Play Store y App Store.</p>
+                            <p>Migré la app de MAUI a dos implementaciones nativas: Kotlin con Jetpack Compose en Android y Swift con SwiftUI en iOS. Implementé el módulo de videollamadas con WebRTC, la integración con las terminales biométricas y el sistema de aperturas, y coordiné la publicación en Play Store y App Store.</p>
                         </div>
                         <div class="tech-row">
-                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Kotlin</span>
+                            <span class="tech-tag">Jetpack Compose</span>
+                            <span class="tech-tag">Swift</span>
+                            <span class="tech-tag">SwiftUI</span>
                             <span class="tech-tag">WebRTC</span>
-                            <span class="tech-tag">.NET MAUI</span>
                             <span class="tech-tag">Android</span>
                             <span class="tech-tag">iOS</span>
                         </div>
@@ -1225,7 +1237,7 @@
                     </div>
                     <div class="project-body">
                         <span class="project-num">10</span>
-                        <h3 class="project-name">Vending Control</h3>
+                        <h3 class="project-name">Wallet Vending Control</h3>
                         <div class="project-meta">
                             <span class="m-company">Control Global</span>
                             <span class="m-sep">·</span>
@@ -1235,7 +1247,7 @@
                         </div>
                         <div class="case-row">
                             <span class="case-label">Contexto</span>
-                            <p>App de gestión y pago para máquinas vending con +10K descargas en Play Store. Codebase legacy construido sobre XML con arquitectura que dificultaba agregar funcionalidades sin romper lo existente.</p>
+                            <p>Wallet digital para pagar y gestionar consumos en máquinas expendedoras (de snacks, bebidas y café) desde el celular, con +10K descargas en Play Store. Codebase legacy construido sobre XML con arquitectura que dificultaba agregar funcionalidades sin romper lo existente.</p>
                         </div>
                         <div class="case-row">
                             <span class="case-label">El problema</span>
@@ -1274,7 +1286,7 @@
                         </div>
                         <div class="case-row">
                             <span class="case-label">Contexto</span>
-                            <p>Aplicación de escritorio Windows para operadores de seguridad, integrada con el ecosistema Phoenix y Access Control. Gestiona llamadas de intercomunicadores desde cualquier punto del sistema.</p>
+                            <p>Aplicación de escritorio Windows para operadores de seguridad, integrada con el ecosistema Access Control. Gestiona llamadas de intercomunicadores desde cualquier punto del sistema.</p>
                         </div>
                         <div class="case-row">
                             <span class="case-label">Mi rol</span>
