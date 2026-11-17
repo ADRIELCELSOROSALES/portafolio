@@ -70,6 +70,19 @@ export function initCarousel() {
     swiper.on('paginationUpdate', labels);
     new MutationObserver(labels).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
 
+    // Las capturas son PNG pesados con loading="lazy": el navegador no cuenta como
+    // "cerca" a las tarjetas fuera de pantalla y las pide tarde. Al acercarse a la
+    // sección las pedimos todas y las decodificamos antes de que lleguen a verse.
+    const warm = () => {
+        el.querySelectorAll('img').forEach(img => {
+            img.loading = 'eager';
+            if (img.decode) img.decode().catch(() => {});
+        });
+    };
+    new IntersectionObserver((entries, obs) => {
+        if (entries.some(e => e.isIntersecting)) { warm(); obs.disconnect(); }
+    }, { rootMargin: '1500px 0px' }).observe(el);
+
     labels();
     sync();
 }
