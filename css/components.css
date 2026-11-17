@@ -321,6 +321,174 @@
     color: var(--text-3);
 }
 
+/* Otros proyectos: tarjetas secundarias */
+.projects-more { margin-top: 7rem; }
+
+.projects-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.projects-subtitle {
+    font-size: clamp(1.4rem, 2.6vw, 1.8rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.carousel-nav { display: flex; gap: 0.5rem; }
+.carousel-btn[data-carousel="toggle"] .i-play { display: none; }
+.carousel-btn[data-carousel="toggle"][data-paused] .i-play { display: block; }
+.carousel-btn[data-carousel="toggle"][data-paused] .i-pause { display: none; }
+.carousel-nav[hidden] { display: none; }
+
+.carousel-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--border-md);
+    background: var(--bg-raised);
+    color: var(--text-1);
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+.carousel-btn:hover:not(:disabled) { border-color: var(--text-1); background: var(--surface); }
+.carousel-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Carrusel (Swiper, vendorizado). Full-bleed sin scroll horizontal de página.
+   Sin JS (antes de .swiper-initialized) queda como fila desplazable. */
+.projects-swiper {
+    --swiper-pagination-color: var(--text-1);
+    --swiper-pagination-bullet-inactive-color: var(--text-3);
+    --swiper-pagination-bullet-inactive-opacity: 1;
+    --swiper-pagination-bullet-size: 10px;
+    --swiper-pagination-bullet-horizontal-gap: 5px;
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    padding: 1.25rem 0 0.5rem;
+}
+.projects-swiper:not(.swiper-initialized) { overflow-x: auto; }
+
+.projects-swiper .swiper-slide {
+    width: min(84vw, 420px);
+    height: auto;
+}
+.projects-swiper.swiper-initialized .swiper-slide {
+    transform: scale(0.9);
+    opacity: 0.55;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.projects-swiper.swiper-initialized .swiper-slide-active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.projects-swiper .swiper-pagination {
+    position: static;
+    margin-top: 1.5rem;
+}
+.projects-swiper .swiper-pagination-bullet { cursor: pointer; }
+.projects-swiper .swiper-pagination-bullet:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+    .projects-swiper.swiper-initialized .swiper-slide { transition: none; }
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    height: 100%;
+    box-shadow: 0 8px 24px -14px var(--img-shadow);
+}
+
+/* Prioridad sobre .reveal para animar solo el borde además del fade-in */
+.project-card.reveal {
+    transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+    border-color: var(--border-md);
+    box-shadow: 0 10px 30px -12px var(--img-shadow);
+}
+
+.card-media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.card-media > a { position: absolute; inset: 0; display: block; }
+
+/* Posición absoluta + alto explícito: no depende del atributo height (Safari) */
+.card-img {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    width: calc(100% - 1.5rem);
+    height: calc(100% - 1.5rem);
+    object-fit: contain;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 1.25rem 1.25rem 1.4rem;
+}
+
+.card-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+}
+
+.card-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 0.9rem;
+    font-size: 0.85rem;
+}
+
+.card-text {
+    font-size: 0.93rem;
+    line-height: 1.6;
+    color: var(--text-2);
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    overflow: hidden;
+}
+
+.project-card .tech-row {
+    margin-top: auto;
+    padding-top: 0.9rem;
+}
+
+.project-card .tech-tag { font-size: 0.78rem; }
+.project-card .proj-nda { padding-top: 0.9rem; font-size: 0.82rem; }
+.project-card .action-row { padding-top: 0.9rem; }
+.project-card .proj-link { padding: 0.4rem 0.85rem; font-size: 0.84rem; }
+
 /* ─── STACK ──────────────────────────────── */
 .stack-section {
     padding: 6rem 2rem;
@@ -504,3 +672,12 @@
 @media (max-width: 600px) {
     .hero, .about, .projects, .stack-section, .contact { padding-left: 1.25rem; padding-right: 1.25rem; }
 }
+
+/* Tarjetas del carrusel: miniatura 16/10 sobre degradado sutil, tipografía clara */
+.projects-swiper .card-media {
+    aspect-ratio: 16 / 10;
+    background: linear-gradient(145deg, var(--surface), transparent 70%), var(--bg);
+}
+.projects-swiper .card-name { font-size: 1.25rem; }
+.projects-swiper .card-body { padding: 1.4rem 1.5rem 1.6rem; }
+.projects-swiper .card-text { font-size: 1rem; }

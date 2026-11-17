@@ -12,8 +12,9 @@
     <meta name="theme-color" content="#0e0f11">
     <script src="js/theme-init.js"></script>
     <title data-i18n="meta.title">Adriel Celso Rosales — Mobile Engineer</title>
-    <meta name="description" data-i18n-content="meta.description" content="Mobile Engineer con +5 años en Android (Kotlin), iOS (Swift), Kotlin Multiplatform y Flutter. Sistemas en producción en 12+ países."/>
+    <meta name="description" data-i18n-content="meta.description" content="Mobile Engineer con +5 años en Android (Kotlin), iOS (Swift), Kotlin Multiplatform y Flutter. Apps en producción para la AFA y bancos de América."/>
 
+    <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/tokens.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
@@ -43,10 +44,7 @@
         <div class="hero-content">
             <h1 class="hero-title">Mobile<br>Engineer</h1>
             <span class="hero-eyebrow">Adriel Celso<br>Rosales</span>
-            <p class="hero-sub" data-i18n-html="hero.sub">
-                Apps nativas Android e iOS, multiplataforma con KMP y Flutter, e interfaces web.<br>
-                Todo en producción. No prototipos.
-            </p>
+            <p class="hero-sub" data-i18n-html="hero.sub">Apps nativas Android e iOS, multiplataforma con KMP y Flutter, e interfaces web.<br>Para clientes como la AFA y bancos de América.</p>
             <div class="hero-ctas">
                 <a href="https://www.linkedin.com/in/adriel-rosales/" target="_blank" rel="noopener noreferrer" class="btn-ghost">LinkedIn ↗</a>
             </div>
@@ -67,9 +65,7 @@
                 <p class="about-text" data-i18n-html="about.p1">
                     Soy Mobile Engineer con más de 5 años de experiencia en <strong>Android (Kotlin)</strong> como plataforma principal, con trabajo productivo en <strong>iOS (Swift)</strong>, <strong>Kotlin Multiplatform</strong>, <strong>Flutter</strong> y <strong>React</strong> para interfaces web. Me muevo entre nativo, multiplataforma y web según lo que el proyecto necesite — y puedo identificar cuándo cada enfoque tiene sentido.
                 </p>
-                <p class="about-text" data-i18n="about.p2">
-                    He trabajado en producción en dominios donde los errores tienen costo real: control de acceso biométrico, identidad digital y KYC, fintech e IoT con integración de hardware.
-                </p>
+                <p class="about-text" data-i18n="about.p2">Trabajé en dominios donde los errores tienen costo: control de acceso biométrico, identidad digital y KYC, fintech e IoT con integración de hardware. Entre los clientes están la AFA, con su wallet, y bancos de América que usan Veriblink, nuestro servicio de biometría.</p>
                 <p class="about-text" data-i18n-html="about.p3">
                     Tengo experiencia sólida con servicios cloud — <strong>AWS, Huawei Cloud</strong> y Firebase — y criterio para elegir el stack correcto según el contexto. En seguridad, trabajo con reverse engineering, análisis de vulnerabilidades mobile, cifrado avanzado y algoritmos post-cuánticos.
                 </p>
@@ -98,9 +94,8 @@
     <section id="projects" class="projects">
         <div class="projects-inner">
             <div class="projects-header reveal">
-                <span class="section-eyebrow" data-i18n="projects.eyebrow">Trabajo real</span>
                 <h2 class="section-title" data-i18n="projects.title">Apps en producción</h2>
-                <p class="section-desc" data-i18n="projects.desc">Productos que hoy usan personas reales en más de 12 países, y los que estoy construyendo ahora.</p>
+                <p class="section-desc" data-i18n-html="projects.desc">Lo que construí y lo que estoy construyendo ahora.</p>
             </div>
 
             <div class="projects-list">
@@ -148,7 +143,7 @@
                     </div>
                 </div>
 
-                <!-- 03 Essentid Wallet -->
+                <!-- 02 Essentid Wallet -->
                 <div class="project-item rev reveal">
                     <div class="project-img-wrap">
                         <img width="457" height="955" loading="lazy" decoding="async" src="./assets/Mockups/wallet.png" alt="Wallet Essentid — credenciales verificables" class="project-img" data-i18n-alt="p2.alt">
@@ -165,7 +160,7 @@
                         </div>
                         <div class="case-row">
                             <span class="case-label" data-i18n="case.context">Contexto</span>
-                            <p data-i18n="p2.context">Wallet de identidad, pagos y beneficios en dos apps nativas independientes, actualmente en desarrollo: Android en Kotlin con Jetpack Compose e iOS en Swift con SwiftUI. Guarda credenciales verificables W3C, lee el chip NFC del DNI y el pasaporte, gestiona pagos en cuotas, entradas, beneficios y el mapa de locales adheridos.</p>
+                            <p data-i18n="p2.context">Wallet de identidad, pagos y beneficios para la AFA, en dos apps nativas independientes, actualmente en desarrollo: Android en Kotlin con Jetpack Compose e iOS en Swift con SwiftUI. Guarda credenciales verificables W3C, lee el chip NFC del DNI y el pasaporte, gestiona pagos en cuotas, entradas, beneficios y el mapa de locales adheridos.</p>
                         </div>
                         <div class="case-row">
                             <span class="case-label" data-i18n="case.problem">El problema</span>
@@ -192,7 +187,7 @@
                     </div>
                 </div>
 
-                <!-- 01 Identidad Digital -->
+                <!-- 03 Identidad Digital -->
                 <div class="project-item reveal">
                     <div class="project-img-wrap">
                         <img width="347" height="719" loading="lazy" decoding="async" src="./assets/Mockups/identidaddigital.png" alt="Identidad Digital & KYC" class="project-img" data-i18n-alt="p3.alt">
@@ -209,7 +204,7 @@
                         </div>
                         <div class="case-row">
                             <span class="case-label" data-i18n="case.context">Contexto</span>
-                            <p data-i18n="p3.context">Web app de verificación de identidad digital para flujos de onboarding en servicios financieros, construida en React y pensada para usarse desde el navegador del celular o la computadora. Captura el documento de identidad, verifica liveness del usuario y valida la información contra registros externos.</p>
+                            <p data-i18n="p3.context">Web app de verificación de identidad digital para flujos de onboarding en servicios financieros, construida en React y pensada para usarse desde el navegador del celular o la computadora. Captura el documento de identidad, verifica liveness del usuario y valida la información contra registros externos. Es la base de Veriblink, el servicio de biometría que usan bancos de América.</p>
                         </div>
                         <div class="case-row">
                             <span class="case-label" data-i18n="case.problem">El problema</span>
@@ -217,7 +212,7 @@
                         </div>
                         <div class="case-row">
                             <span class="case-label" data-i18n="case.role">Mi rol</span>
-                            <p data-i18n="p3.role">Lidero el desarrollo front en React. Implementé la captura de documentos y la liveness detection desde la cámara del navegador, la integración con AWS y Huawei Cloud para procesamiento OCR, y el cifrado de datos biométricos con algoritmos post-cuánticos (CRYSTALS-Kyber).</p>
+                            <p data-i18n="p3.role">Trabajo en el sistema completo, front y back, con las integraciones entre ambos, y defino la arquitectura y los métodos de seguridad. En el front implementé la captura de documentos y la liveness detection desde la cámara del navegador. Integré AWS y Huawei Cloud para el procesamiento OCR y cifré los datos biométricos con algoritmos post-cuánticos (CRYSTALS-Kyber).</p>
                         </div>
                         <div class="tech-row">
                             <span class="tech-tag">React</span>
@@ -227,11 +222,14 @@
                             <span class="tech-tag">OCR</span>
                             <span class="tech-tag">CRYSTALS-Kyber</span>
                         </div>
+                        <div class="action-row">
+                            <a href="https://veriblink.com.ar" target="_blank" rel="noopener noreferrer" class="proj-link hi" data-i18n="link.demo">Probar demo de Veriblink ↗</a>
+                        </div>
                         <p class="proj-nda" data-i18n="nda.docs">La documentación de este proyecto es privada.</p>
                     </div>
                 </div>
 
-                <!-- 03 Multas Digital -->
+                <!-- 04 Multas Digital -->
                 <div class="project-item rev reveal">
                     <div class="project-img-wrap">
                         <img width="335" height="300" loading="lazy" decoding="async" src="./assets/Mockups/multas.png" alt="Multas Digital" class="project-img fill">
@@ -275,99 +273,13 @@
                     </div>
                 </div>
 
-                <!-- 04 Clockit -->
-                <div class="project-item reveal">
-                    <div class="project-img-wrap">
-                        <img width="339" height="736" loading="lazy" decoding="async" src="./assets/Mockups/clockit.png" alt="Clockit" class="project-img">
-                    </div>
-                    <div class="project-body">
-                        <span class="project-num">05</span>
-                        <h3 class="project-name" data-i18n="p5.name">Clockit — Control de Asistencia y Fichaje</h3>
-                        <div class="project-meta">
-                            <span class="m-company">Encode Labs</span>
-                            <span class="m-sep">·</span>
-                            <span class="m-period" data-i18n="period.mar2026">Marzo 2026 – Presente</span>
-                            <span class="m-sep">·</span>
-                            <span class="m-role">Mobile Lead</span>
-                        </div>
-                        <div class="case-row">
-                            <span class="case-label" data-i18n="case.context">Contexto</span>
-                            <p data-i18n="p5.context">App de control de asistencia y fichaje para empresas, disponible en Android e iOS. Sistema en producción con usuarios activos, desarrollado originalmente en Flutter por un equipo externo con documentación parcial.</p>
-                        </div>
-                        <div class="case-row">
-                            <span class="case-label" data-i18n="case.problem">El problema</span>
-                            <p data-i18n="p5.problem">Código heredado sin arquitectura clara y con mecanismos de seguridad opacos que requerían análisis previo antes de cualquier modificación. Riesgo real de romper funcionalidad crítica sin entender el sistema.</p>
-                        </div>
-                        <div class="case-row">
-                            <span class="case-label" data-i18n="case.role">Mi rol</span>
-                            <p data-i18n="p5.role">Análisis de seguridad por ingeniería inversa del código existente, identificación de vulnerabilidades y flujos críticos. Con eso como base, lidero la migración de Flutter a dos apps nativas: Kotlin con Jetpack Compose en Android y Swift con SwiftUI en iOS, manteniendo la app en producción durante todo el proceso.</p>
-                        </div>
-                        <div class="tech-row">
-                            <span class="tech-tag">Kotlin</span>
-                            <span class="tech-tag">Jetpack Compose</span>
-                            <span class="tech-tag">Swift</span>
-                            <span class="tech-tag">SwiftUI</span>
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">Reverse Engineering</span>
-                            <span class="tech-tag">Security Analysis</span>
-                            <span class="tech-tag">Clean Architecture</span>
-                        </div>
-                        <p class="proj-nda" data-i18n="nda.docs">La documentación de este proyecto es privada.</p>
-                        <div class="action-row">
-                            <a href="https://play.google.com/store/apps/details?id=labs.encode.clockit" target="_blank" rel="noopener noreferrer" class="proj-link android">Play Store ↗</a>
-                            <a href="https://apps.apple.com/ar/app/clockit/id6474617227" target="_blank" rel="noopener noreferrer" class="proj-link ios">App Store ↗</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 02 Aplivit -->
-                <div class="project-item rev reveal">
-                    <div class="project-img-wrap">
-                        <img width="1024" height="1536" loading="lazy" decoding="async" src="./assets/Mockups/aplivit.png" alt="Aplivit — lección de inglés con la palabra Apple y botón de audio" class="project-img" data-i18n-alt="p6.alt">
-                    </div>
-                    <div class="project-body">
-                        <span class="project-num">06</span>
-                        <h3 class="project-name" data-i18n="p6.name">Aplivit — App de Educación y Orientación Vocacional</h3>
-                        <div class="project-meta">
-                            <span class="m-company">Vocational Training Foundation USA</span>
-                            <span class="m-sep">·</span>
-                            <span class="m-period" data-i18n="period.jan2026">Enero 2026 – Presente</span>
-                            <span class="m-sep">·</span>
-                            <span class="m-role">Mobile Lead</span>
-                        </div>
-                        <div class="case-row">
-                            <span class="case-label" data-i18n="case.context">Contexto</span>
-                            <p data-i18n="p6.context">App educativa para Android e iOS desarrollada para una fundación de formación vocacional en Miami, Florida. Orienta a estudiantes en la elección de carreras técnicas y los conecta con oportunidades laborales.</p>
-                        </div>
-                        <div class="case-row">
-                            <span class="case-label" data-i18n="case.problem">El problema</span>
-                            <p data-i18n="p6.problem">La organización necesitaba una sola codebase que funcionara nativamente en Android e iOS, minimizando costos de mantenimiento a largo plazo sin sacrificar experiencia de usuario.</p>
-                        </div>
-                        <div class="case-row">
-                            <span class="case-label" data-i18n="case.role">Mi rol</span>
-                            <p data-i18n="p6.role">Desarrollo completo con Kotlin Multiplatform. Arquitectura compartida para lógica de negocio y datos, con UI nativa diferenciada por plataforma usando Compose Multiplatform y SwiftUI.</p>
-                        </div>
-                        <div class="tech-row">
-                            <span class="tech-tag">Kotlin Multiplatform</span>
-                            <span class="tech-tag">Compose Multiplatform</span>
-                            <span class="tech-tag">SwiftUI</span>
-                            <span class="tech-tag">Clean Architecture</span>
-                            <span class="tech-tag">Android</span>
-                            <span class="tech-tag">iOS</span>
-                        </div>
-                        <div class="action-row">
-                            <a href="https://github.com/ADRIELCELSOROSALES/KMPaplivit" target="_blank" rel="noopener noreferrer" class="proj-link hi" data-i18n="link.project">Ver proyecto ↗</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 02 Reverso -->
+                <!-- 05 Reverso -->
                 <div class="project-item reveal">
                     <div class="project-img-wrap">
                         <img width="1200" height="792" loading="lazy" decoding="async" src="./assets/Mockups/reverso.png" alt="Reverso — auditoría de apps móviles" class="project-img" data-i18n-alt="p7.alt">
                     </div>
                     <div class="project-body">
-                        <span class="project-num">07</span>
+                        <span class="project-num">05</span>
                         <h3 class="project-name" data-i18n="p7.name">Reverso — Auditoría de Seguridad de Apps Móviles</h3>
                         <div class="project-meta">
                             <span class="m-company" data-i18n="company.own">Proyecto propio</span>
@@ -405,7 +317,7 @@
                     </div>
                 </div>
 
-                <!-- 05 Phoenix -->
+                <!-- 06 Phoenix -->
                 <div class="project-item rev reveal">
                     <div class="project-img-wrap">
                         <a href="https://accesscontrol.biz/metodos-de-control-de-acceso/" target="_blank" rel="noopener noreferrer">
@@ -413,7 +325,7 @@
                         </a>
                     </div>
                     <div class="project-body">
-                        <span class="project-num">08</span>
+                        <span class="project-num">06</span>
                         <h3 class="project-name" data-i18n="p8.name">Access Control — Terminal de Acceso Biométrico</h3>
                         <div class="project-meta">
                             <span class="m-company">Control Global</span>
@@ -450,241 +362,252 @@
                     </div>
                 </div>
 
-                <!-- 06 Migración -->
-                <div class="project-item reveal">
-                    <div class="project-img-wrap">
-                        <img width="747" height="893" loading="lazy" decoding="async" src="./assets/Mockups/access.png" alt="Access Control" class="project-img">
-                    </div>
-                    <div class="project-body">
-                        <span class="project-num">09</span>
-                        <h3 class="project-name" data-i18n="p9.name">Access Control — App de Gestión de Accesos</h3>
-                        <div class="project-meta">
-                            <span class="m-company">Control Global</span>
-                            <span class="m-sep">·</span>
-                            <span class="m-period">2024 – 2025</span>
-                            <span class="m-sep">·</span>
-                            <span class="m-role">Mobile Engineer</span>
-                        </div>
-                        <div class="case-row">
-                            <span class="case-label" data-i18n="case.context">Contexto</span>
-                            <p data-i18n="p9.context">App móvil de control y gestión de accesos para Android e iOS, conectada al sistema central de aperturas de la empresa. Desde el teléfono el usuario abre puertas y accesos, invita y gestiona visitantes, y se comunica por videollamada con las terminales biométricas de reconocimiento facial.</p>
-                        </div>
-                        <div class="case-row">
-                            <span class="case-label" data-i18n="case.problem">El problema</span>
-                            <p data-i18n="p9.problem">La primera versión estaba construida en .NET MAUI y no daba el control nativo necesario para correr WebRTC de forma estable ni para integrarse bien con el resto del sistema. Cada feature nueva sumaba workarounds y deuda técnica.</p>
-                        </div>
-                        <div class="case-row">
-                            <span class="case-label" data-i18n="case.role">Mi rol</span>
-                            <p data-i18n="p9.role">Migré la app de MAUI a dos implementaciones nativas: Kotlin con Jetpack Compose en Android y Swift con SwiftUI en iOS. Implementé el módulo de videollamadas con WebRTC, la integración con las terminales biométricas y el sistema de aperturas, y coordiné la publicación en Play Store y App Store.</p>
-                        </div>
-                        <div class="tech-row">
-                            <span class="tech-tag">Kotlin</span>
-                            <span class="tech-tag">Jetpack Compose</span>
-                            <span class="tech-tag">Swift</span>
-                            <span class="tech-tag">SwiftUI</span>
-                            <span class="tech-tag">WebRTC</span>
-                            <span class="tech-tag">Android</span>
-                            <span class="tech-tag">iOS</span>
-                        </div>
-                        <div class="action-row">
-                            <a href="https://play.google.com/store/search?q=access%20control&c=apps&hl=es_US" target="_blank" rel="noopener noreferrer" class="proj-link android">Play Store ↗</a>
-                            <a href="https://apps.apple.com/us/app/access-control-app-m%C3%B3vil/id6470677214" target="_blank" rel="noopener noreferrer" class="proj-link ios">App Store ↗</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 07 Vending -->
-                <div class="project-item rev reveal">
-                    <div class="project-img-wrap">
-                        <img width="797" height="885" loading="lazy" decoding="async" src="./assets/Mockups/vending.png" alt="Vending Control" class="project-img">
-                    </div>
-                    <div class="project-body">
-                        <span class="project-num">10</span>
-                        <h3 class="project-name">Wallet Vending Control</h3>
-                        <div class="project-meta">
-                            <span class="m-company">Control Global</span>
-                            <span class="m-sep">·</span>
-                            <span class="m-period">2024</span>
-                            <span class="m-sep">·</span>
-                            <span class="m-role">Mobile Engineer</span>
-                        </div>
-                        <div class="case-row">
-                            <span class="case-label" data-i18n="case.context">Contexto</span>
-                            <p data-i18n="p10.context">Wallet digital para pagar y gestionar consumos en máquinas expendedoras (de snacks, bebidas y café) desde el celular, con +10K descargas en Play Store. Codebase legacy construido sobre XML con arquitectura que dificultaba agregar funcionalidades sin romper lo existente.</p>
-                        </div>
-                        <div class="case-row">
-                            <span class="case-label" data-i18n="case.problem">El problema</span>
-                            <p data-i18n="p10.problem">UI inconsistente y frágil ante cambios. Cada sprint era una negociación con deuda técnica acumulada.</p>
-                        </div>
-                        <div class="case-row">
-                            <span class="case-label" data-i18n="case.role">Mi rol</span>
-                            <p data-i18n="p10.role">Migración completa de todas las vistas de XML a Jetpack Compose sin interrumpir el funcionamiento en producción. Modernización arquitectónica con Clean Architecture y MVVM.</p>
-                        </div>
-                        <div class="tech-row">
-                            <span class="tech-tag">Kotlin</span>
-                            <span class="tech-tag">Jetpack Compose</span>
-                            <span class="tech-tag">MVVM</span>
-                            <span class="tech-tag">Clean Architecture</span>
-                        </div>
-                        <div class="action-row">
-                            <a href="https://play.google.com/store/search?q=vending%20control&c=apps&hl=es_US" target="_blank" rel="noopener noreferrer" class="proj-link android">Play Store ↗</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 08 Gate Keeper -->
-                <div class="project-item reveal">
-                    <div class="project-img-wrap">
-                        <img width="1280" height="960" loading="lazy" decoding="async" src="./assets/Mockups/gk.png" alt="Gate Keeper" class="project-img">
-                    </div>
-                    <div class="project-body">
-                        <span class="project-num">11</span>
-                        <h3 class="project-name">Gate Keeper</h3>
-                        <div class="project-meta">
-                            <span class="m-company">Control Global</span>
-                            <span class="m-sep">·</span>
-                            <span class="m-period">2024</span>
-                            <span class="m-sep">·</span>
-                            <span class="m-role">Mobile Engineer</span>
-                        </div>
-                        <div class="case-row">
-                            <span class="case-label" data-i18n="case.context">Contexto</span>
-                            <p data-i18n="p11.context">Aplicación de escritorio Windows para operadores de seguridad, integrada con el ecosistema Access Control. Gestiona llamadas de intercomunicadores desde cualquier punto del sistema.</p>
-                        </div>
-                        <div class="case-row">
-                            <span class="case-label" data-i18n="case.role">Mi rol</span>
-                            <p data-i18n="p11.role">Implementé el módulo SIP embebido para llamadas en tiempo real e integré WebRTC para soporte multimedia. Diseñé la comunicación entre el módulo de llamadas y el resto del sistema.</p>
-                        </div>
-                        <div class="tech-row">
-                            <span class="tech-tag">.NET</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">SIP</span>
-                            <span class="tech-tag">WebRTC</span>
-                        </div>
-                        <p class="proj-nda" data-i18n="nda.docs">La documentación de este proyecto es privada.</p>
-                    </div>
-                </div>
-
-                <!-- 09 Banking (oculto) -->
-                <!--
-                <div class="project-item rev reveal">
-                    <div class="project-img-wrap">
-                        <img width="1280" height="1099" loading="lazy" decoding="async" src="./assets/Mockups/bank menu-Photoroom.png" alt="App Bancaria" class="project-img">
-                    </div>
-                    <div class="project-body">
-                        <span class="project-num">12</span>
-                        <h3 class="project-name">App Bancaria</h3>
-                        <div class="project-meta">
-                            <span class="m-company">Freelance</span>
-                            <span class="m-sep">·</span>
-                            <span class="m-period">2023</span>
-                            <span class="m-sep">·</span>
-                            <span class="m-role">Android Developer</span>
-                        </div>
-                        <div class="case-row">
-                            <span class="case-label">Contexto</span>
-                            <p>Aplicación bancaria con requisitos estrictos de seguridad y manejo de datos financieros sensibles.</p>
-                        </div>
-                        <div class="case-row">
-                            <span class="case-label">Mi rol</span>
-                            <p>Refactor de la capa de presentación, integración con APIs RESTful y reorganización arquitectónica con foco en seguridad, protección de datos y cumplimiento normativo.</p>
-                        </div>
-                        <div class="tech-row">
-                            <span class="tech-tag">Kotlin</span>
-                            <span class="tech-tag">XML</span>
-                            <span class="tech-tag">APIs RESTful</span>
-                            <span class="tech-tag">Arquitectura en capas</span>
-                        </div>
-                        <p class="proj-nda">La documentación de este proyecto es privada.</p>
-                    </div>
-                </div>
-                -->
-
-                <!-- 10 ChatBot (oculto) -->
-                <!--
-                <div class="project-item reveal">
-                    <div class="project-img-wrap">
-                        <img width="715" height="650" loading="lazy" decoding="async" src="./assets/Mockups/ChatBot.png" alt="ChatBot con IA" class="project-img">
-                    </div>
-                    <div class="project-body">
-                        <span class="project-num">13</span>
-                        <h3 class="project-name">ChatBot con IA</h3>
-                        <div class="project-meta">
-                            <span class="m-company">Freelance Internacional</span>
-                            <span class="m-sep">·</span>
-                            <span class="m-period">2022</span>
-                            <span class="m-sep">·</span>
-                            <span class="m-role">Android Developer</span>
-                        </div>
-                        <div class="case-row">
-                            <span class="case-label">Contexto</span>
-                            <p>App conversacional para cliente internacional con integración de modelo de lenguaje para soporte automatizado en tiempo real.</p>
-                        </div>
-                        <div class="case-row">
-                            <span class="case-label">Mi rol</span>
-                            <p>Desarrollo completo de la app Android con integración de APIs de IA generativa para respuestas en tiempo real.</p>
-                        </div>
-                        <div class="tech-row">
-                            <span class="tech-tag">Kotlin</span>
-                            <span class="tech-tag">XML</span>
-                            <span class="tech-tag">REST APIs</span>
-                            <span class="tech-tag">AI / LLM</span>
-                        </div>
-                        <div class="action-row">
-                            <a href="https://github.com/ADRIELCELSOROSALES/chatIA" target="_blank" rel="noopener noreferrer" class="proj-link">GitHub ↗</a>
-                        </div>
-                    </div>
-                </div>
-                -->
-
-                <!-- 11 CVP (oculto) -->
-                <!--
-                <div class="project-item rev reveal">
-                    <div class="project-img-wrap">
-                        <img width="335" height="745" loading="lazy" decoding="async" src="./assets/Mockups/capavial.png" alt="Capa Vial Predictiva" class="project-img">
-                    </div>
-                    <div class="project-body">
-                        <span class="project-num">14</span>
-                        <h3 class="project-name">Capa Vial Predictiva</h3>
-                        <div class="project-meta">
-                            <span class="m-company">Proyecto Personal</span>
-                            <span class="m-sep">·</span>
-                            <span class="m-period">2026</span>
-                            <span class="m-sep">·</span>
-                            <span class="m-role">Solo developer</span>
-                        </div>
-                        <div class="case-row">
-                            <span class="case-label">Contexto</span>
-                            <p>Dos apps nativas — Android (Kotlin) e iOS (Swift) — que superponen sobre un mapa los puntos con historial acumulado de siniestros viales, usando datasets públicos oficiales (Buenos Aires Data). El conductor puede explorar el mapa libremente o recibir una alerta pasiva al aproximarse a una zona registrada.</p>
-                        </div>
-                        <div class="case-row">
-                            <span class="case-label">El problema</span>
-                            <p>Google Maps y Waze muestran incidentes en tiempo real y los olvidan. No existe una memoria visible del riesgo histórico de la vía: los datos son públicos, pero están enterrados en datasets que nadie consulta mientras maneja.</p>
-                        </div>
-                        <div class="case-row">
-                            <span class="case-label">Mi rol</span>
-                            <p>Diseño completo del producto, pipeline de datos en Python (DBSCAN clustering sobre coordenadas de CABA) y dos implementaciones nativas independientes: MVVM + Jetpack Compose en Android, SwiftUI + Swift Concurrency en iOS. Índice espacial por geohash para queries de proximidad en tiempo real. Sin backend, sin telemetría del usuario.</p>
-                        </div>
-                        <div class="tech-row">
-                            <span class="tech-tag">Kotlin</span>
-                            <span class="tech-tag">Swift</span>
-                            <span class="tech-tag">Jetpack Compose</span>
-                            <span class="tech-tag">SwiftUI</span>
-                            <span class="tech-tag">MapLibre</span>
-                            <span class="tech-tag">GeoJSON</span>
-                            <span class="tech-tag">DBSCAN</span>
-                            <span class="tech-tag">Geohash</span>
-                            <span class="tech-tag">Clean Architecture</span>
-                        </div>
-                        <div class="action-row">
-                            <a href="https://github.com/ADRIELCELSOROSALES/MemoriaVial-Android" target="_blank" rel="noopener noreferrer" class="proj-link android">Ver proyecto en Android ↗</a>
-                            <a href="https://github.com/ADRIELCELSOROSALES/MemoriaVial-iOS" target="_blank" rel="noopener noreferrer" class="proj-link ios">Ver proyecto en iOS ↗</a>
-                        </div>
-                    </div>
-                </div>
-                -->
-
             </div>
+
+            <div class="projects-more">
+                <div class="projects-head reveal">
+                    <h3 class="projects-subtitle" id="projects-more-title" data-i18n="projects.more">Otros proyectos</h3>
+                    <div class="carousel-nav" hidden>
+                        <button type="button" class="carousel-btn" data-carousel="toggle" data-i18n-aria="ui.pause" aria-label="Pausar carrusel automático">
+                            <svg class="i-pause" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                            <svg class="i-play" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M8 5l11 7-11 7z" fill="currentColor"/></svg>
+                        </button>
+                        <button type="button" class="carousel-btn" data-carousel="prev" data-i18n-aria="ui.prev" aria-label="Anterior">
+                            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                        <button type="button" class="carousel-btn" data-carousel="next" data-i18n-aria="ui.next" aria-label="Siguiente">
+                            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="swiper projects-swiper" role="region" aria-label="Carrusel de otros proyectos" data-i18n-aria="ui.carousel">
+                <ul class="swiper-wrapper" role="list" aria-labelledby="projects-more-title">
+                    <li class="swiper-slide"><div class="project-card">
+                        <div class="card-media">
+                            <img width="1024" height="1536" loading="lazy" decoding="async" src="./assets/Mockups/aplivit.png" alt="Aplivit — lección de inglés con la palabra Apple y botón de audio" class="card-img" data-i18n-alt="p6.alt">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-name" data-i18n="p6.name">Aplivit — App de Educación y Orientación Vocacional</h4>
+                            <div class="card-meta">
+                                <span class="m-company">Vocational Training Foundation USA</span>
+                                <span class="m-sep">·</span>
+                                <span class="m-period" data-i18n="period.jan2026">Enero 2026 – Presente</span>
+                                <span class="m-sep">·</span>
+                                <span class="m-role">Mobile Lead</span>
+                            </div>
+                            <p class="card-text" data-i18n="p6.context">App educativa para Android e iOS desarrollada para una fundación de formación vocacional en Miami, Florida. Orienta a estudiantes en la elección de carreras técnicas y los conecta con oportunidades laborales.</p>
+                            <div class="tech-row">
+                                <span class="tech-tag">Kotlin Multiplatform</span>
+                                <span class="tech-tag">Compose Multiplatform</span>
+                                <span class="tech-tag">SwiftUI</span>
+                                <span class="tech-tag">Clean Architecture</span>
+                                <span class="tech-tag">Android</span>
+                                <span class="tech-tag">iOS</span>
+                            </div>
+                            <div class="action-row">
+                                <a href="https://github.com/ADRIELCELSOROSALES/KMPaplivit" target="_blank" rel="noopener noreferrer" class="proj-link hi" data-i18n="link.project">Ver proyecto ↗</a>
+                            </div>
+                        </div>
+                    </div></li>
+
+                    <li class="swiper-slide"><div class="project-card">
+                        <div class="card-media">
+                            <img width="747" height="893" loading="lazy" decoding="async" src="./assets/Mockups/access.png" alt="Access Control" class="card-img">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-name" data-i18n="p9.name">Access Control — App de Gestión de Accesos</h4>
+                            <div class="card-meta">
+                                <span class="m-company">Control Global</span>
+                                <span class="m-sep">·</span>
+                                <span class="m-period">2024 – 2025</span>
+                                <span class="m-sep">·</span>
+                                <span class="m-role">Mobile Engineer</span>
+                            </div>
+                            <p class="card-text" data-i18n="p9.context">App móvil de control y gestión de accesos para Android e iOS, conectada al sistema central de aperturas de la empresa. Desde el teléfono el usuario abre puertas y accesos, invita y gestiona visitantes, y se comunica por videollamada con las terminales biométricas de reconocimiento facial.</p>
+                            <div class="tech-row">
+                                <span class="tech-tag">Kotlin</span>
+                                <span class="tech-tag">Jetpack Compose</span>
+                                <span class="tech-tag">Swift</span>
+                                <span class="tech-tag">SwiftUI</span>
+                                <span class="tech-tag">WebRTC</span>
+                                <span class="tech-tag">Android</span>
+                                <span class="tech-tag">iOS</span>
+                            </div>
+                            <div class="action-row">
+                                <a href="https://play.google.com/store/search?q=access%20control&c=apps&hl=es_US" target="_blank" rel="noopener noreferrer" class="proj-link android">Play Store ↗</a>
+                                <a href="https://apps.apple.com/us/app/access-control-app-m%C3%B3vil/id6470677214" target="_blank" rel="noopener noreferrer" class="proj-link ios">App Store ↗</a>
+                            </div>
+                        </div>
+                    </div></li>
+
+                    <li class="swiper-slide"><div class="project-card">
+                        <div class="card-media">
+                            <img width="797" height="885" loading="lazy" decoding="async" src="./assets/Mockups/vending.png" alt="Vending Control" class="card-img">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-name">Wallet Vending Control</h4>
+                            <div class="card-meta">
+                                <span class="m-company">Control Global</span>
+                                <span class="m-sep">·</span>
+                                <span class="m-period">2024</span>
+                                <span class="m-sep">·</span>
+                                <span class="m-role">Mobile Engineer</span>
+                            </div>
+                            <p class="card-text" data-i18n="p10.context">Wallet digital para pagar y gestionar consumos en máquinas expendedoras (de snacks, bebidas y café) desde el celular, con +10K descargas en Play Store. Codebase legacy construido sobre XML con arquitectura que dificultaba agregar funcionalidades sin romper lo existente.</p>
+                            <div class="tech-row">
+                                <span class="tech-tag">Kotlin</span>
+                                <span class="tech-tag">Jetpack Compose</span>
+                                <span class="tech-tag">MVVM</span>
+                                <span class="tech-tag">Clean Architecture</span>
+                            </div>
+                            <div class="action-row">
+                                <a href="https://play.google.com/store/search?q=vending%20control&c=apps&hl=es_US" target="_blank" rel="noopener noreferrer" class="proj-link android">Play Store ↗</a>
+                            </div>
+                        </div>
+                    </div></li>
+
+                    <li class="swiper-slide"><div class="project-card">
+                        <div class="card-media">
+                            <img width="339" height="736" loading="lazy" decoding="async" src="./assets/Mockups/clockit.png" alt="Clockit" class="card-img">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-name" data-i18n="p5.name">Clockit — Control de Asistencia y Fichaje</h4>
+                            <div class="card-meta">
+                                <span class="m-company">Encode Labs</span>
+                                <span class="m-sep">·</span>
+                                <span class="m-period" data-i18n="period.mar2026">Marzo 2026 – Presente</span>
+                                <span class="m-sep">·</span>
+                                <span class="m-role">Mobile Lead</span>
+                            </div>
+                            <p class="card-text" data-i18n="p5.context">App de control de asistencia y fichaje para empresas, disponible en Android e iOS. Sistema en producción con usuarios activos, desarrollado originalmente en Flutter por un equipo externo con documentación parcial.</p>
+                            <div class="tech-row">
+                                <span class="tech-tag">Kotlin</span>
+                                <span class="tech-tag">Jetpack Compose</span>
+                                <span class="tech-tag">Swift</span>
+                                <span class="tech-tag">SwiftUI</span>
+                                <span class="tech-tag">Flutter</span>
+                                <span class="tech-tag">Reverse Engineering</span>
+                                <span class="tech-tag">Security Analysis</span>
+                                <span class="tech-tag">Clean Architecture</span>
+                            </div>
+                            <p class="proj-nda" data-i18n="nda.docs">La documentación de este proyecto es privada.</p>
+                            <div class="action-row">
+                                <a href="https://play.google.com/store/apps/details?id=labs.encode.clockit" target="_blank" rel="noopener noreferrer" class="proj-link android">Play Store ↗</a>
+                                <a href="https://apps.apple.com/ar/app/clockit/id6474617227" target="_blank" rel="noopener noreferrer" class="proj-link ios">App Store ↗</a>
+                            </div>
+                        </div>
+                    </div></li>
+
+                    <li class="swiper-slide"><div class="project-card">
+                        <div class="card-media">
+                            <img width="1280" height="960" loading="lazy" decoding="async" src="./assets/Mockups/gk.png" alt="Gate Keeper" class="card-img">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-name">Gate Keeper</h4>
+                            <div class="card-meta">
+                                <span class="m-company">Control Global</span>
+                                <span class="m-sep">·</span>
+                                <span class="m-period">2024</span>
+                                <span class="m-sep">·</span>
+                                <span class="m-role">Mobile Engineer</span>
+                            </div>
+                            <p class="card-text" data-i18n="p11.context">Aplicación de escritorio Windows para operadores de seguridad, integrada con el ecosistema Access Control. Gestiona llamadas de intercomunicadores desde cualquier punto del sistema.</p>
+                            <div class="tech-row">
+                                <span class="tech-tag">.NET</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">SIP</span>
+                                <span class="tech-tag">WebRTC</span>
+                            </div>
+                            <p class="proj-nda" data-i18n="nda.docs">La documentación de este proyecto es privada.</p>
+                        </div>
+                    </div></li>
+
+                    <li class="swiper-slide"><div class="project-card">
+                        <div class="card-media">
+                            <img width="1280" height="1099" loading="lazy" decoding="async" src="./assets/Mockups/bank menu-Photoroom.png" alt="App Bancaria" class="card-img" data-i18n-alt="bank.alt">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-name" data-i18n="bank.name">App Bancaria</h4>
+                            <div class="card-meta">
+                                <span class="m-company">Freelance</span>
+                                <span class="m-sep">·</span>
+                                <span class="m-period">2023</span>
+                                <span class="m-sep">·</span>
+                                <span class="m-role">Android Developer</span>
+                            </div>
+                            <p class="card-text" data-i18n="bank.context">Aplicación bancaria con requisitos estrictos de seguridad y manejo de datos financieros sensibles.</p>
+                            <div class="tech-row">
+                                <span class="tech-tag">Kotlin</span>
+                                <span class="tech-tag">XML</span>
+                                <span class="tech-tag">APIs RESTful</span>
+                                <span class="tech-tag" data-i18n="tech.layered">Arquitectura en capas</span>
+                            </div>
+                            <p class="proj-nda" data-i18n="nda.docs">La documentación de este proyecto es privada.</p>
+                        </div>
+                    </div></li>
+
+                    <li class="swiper-slide"><div class="project-card">
+                        <div class="card-media">
+                            <img width="715" height="650" loading="lazy" decoding="async" src="./assets/Mockups/ChatBot.png" alt="ChatBot con IA" class="card-img" data-i18n-alt="chat.alt">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-name" data-i18n="chat.name">ChatBot con IA</h4>
+                            <div class="card-meta">
+                                <span class="m-company" data-i18n="company.intlFreelance">Freelance Internacional</span>
+                                <span class="m-sep">·</span>
+                                <span class="m-period">2022</span>
+                                <span class="m-sep">·</span>
+                                <span class="m-role">Android Developer</span>
+                            </div>
+                            <p class="card-text" data-i18n="chat.context">App conversacional para cliente internacional con integración de modelo de lenguaje para soporte automatizado en tiempo real.</p>
+                            <div class="tech-row">
+                                <span class="tech-tag">Kotlin</span>
+                                <span class="tech-tag">XML</span>
+                                <span class="tech-tag">REST APIs</span>
+                                <span class="tech-tag">AI / LLM</span>
+                            </div>
+                            <div class="action-row">
+                                <a href="https://github.com/ADRIELCELSOROSALES/chatIA" target="_blank" rel="noopener noreferrer" class="proj-link">GitHub ↗</a>
+                            </div>
+                        </div>
+                    </div></li>
+
+                    <li class="swiper-slide"><div class="project-card">
+                        <div class="card-media">
+                            <img width="335" height="745" loading="lazy" decoding="async" src="./assets/Mockups/capavial.png" alt="Capa Vial Predictiva" class="card-img" data-i18n-alt="cvp.alt">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-name" data-i18n="cvp.name">Capa Vial Predictiva</h4>
+                            <div class="card-meta">
+                                <span class="m-company" data-i18n="company.personal">Proyecto Personal</span>
+                                <span class="m-sep">·</span>
+                                <span class="m-period">2026</span>
+                                <span class="m-sep">·</span>
+                                <span class="m-role">Solo developer</span>
+                            </div>
+                            <p class="card-text" data-i18n="cvp.context">Dos apps nativas — Android (Kotlin) e iOS (Swift) — que superponen sobre un mapa los puntos con historial acumulado de siniestros viales, usando datasets públicos oficiales (Buenos Aires Data). El conductor puede explorar el mapa libremente o recibir una alerta pasiva al aproximarse a una zona registrada.</p>
+                            <div class="tech-row">
+                                <span class="tech-tag">Kotlin</span>
+                                <span class="tech-tag">Swift</span>
+                                <span class="tech-tag">Jetpack Compose</span>
+                                <span class="tech-tag">SwiftUI</span>
+                                <span class="tech-tag">MapLibre</span>
+                                <span class="tech-tag">GeoJSON</span>
+                                <span class="tech-tag">DBSCAN</span>
+                                <span class="tech-tag">Geohash</span>
+                                <span class="tech-tag">Clean Architecture</span>
+                            </div>
+                            <div class="action-row">
+                                <a href="https://github.com/ADRIELCELSOROSALES/MemoriaVial-Android" target="_blank" rel="noopener noreferrer" class="proj-link android" data-i18n="link.cvpAndroid">Ver proyecto en Android ↗</a>
+                                <a href="https://github.com/ADRIELCELSOROSALES/MemoriaVial-iOS" target="_blank" rel="noopener noreferrer" class="proj-link ios" data-i18n="link.cvpIos">Ver proyecto en iOS ↗</a>
+                            </div>
+                        </div>
+                    </div></li>
+                </ul>
+                <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -729,10 +652,7 @@
     <section id="contact" class="contact">
         <div class="contact-inner reveal">
             <h2 data-i18n-html="contact.title">¿Construís algo Mobile<br>que necesite escalar?</h2>
-            <p class="contact-desc" data-i18n="contact.desc">
-                Trabajo con equipos que buscan un engineer con criterio y velocidad de delivery.
-                Si tenés un proyecto real — producto, startup o empresa — hablemos.
-            </p>
+            <p class="contact-desc" data-i18n="contact.desc">Trabajo con equipos que buscan un engineer con criterio y velocidad de delivery. Si tenés un proyecto — producto, startup o empresa — hablemos.</p>
             <a data-i18n-aria="contact.copyAria" href="#" class="contact-email" role="button" aria-label="Copiar email al portapapeles: adrielrosales1999@gmail.com">
                 adrielrosales1999@gmail.com
             </a>
