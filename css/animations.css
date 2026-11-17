@@ -1,0 +1,41 @@
+/* Luz suave que sigue al cursor (fija arriba en pantallas táctiles) */
+#spotlight {
+    --x: 50%;
+    --y: 20%;
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(600px circle at var(--x) var(--y), rgba(110, 140, 255, 0.09), transparent 70%);
+}
+
+/* Cuadrícula que solo aparece alrededor del cursor */
+#spotlight::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+    background-size: 48px 48px;
+    -webkit-mask-image: radial-gradient(320px circle at var(--x) var(--y), #000, transparent 75%);
+            mask-image: radial-gradient(320px circle at var(--x) var(--y), #000, transparent 75%);
+}
+
+/* ─── SCROLL ANIMATIONS ───────────────────── */
+.reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; }
+    #spotlight { display: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .project-img-wrap { animation: none; }
+    .hero-title, .hero-eyebrow { animation: none; }
+}

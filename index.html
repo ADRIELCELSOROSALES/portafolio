@@ -11,636 +11,19 @@
     <title>Adriel Celso Rosales — Mobile Engineer</title>
     <meta name="description" content="Mobile Engineer con +5 años en Android (Kotlin), iOS (Swift), Kotlin Multiplatform y Flutter. Sistemas en producción en 12+ países."/>
 
-    <style>
-        :root {
-            --bg:        #0e0f11;
-            --bg-raised: #16171a;
-            --surface:   rgba(255, 255, 255, 0.035);
-            --border:    rgba(255, 255, 255, 0.08);
-            --border-md: rgba(255, 255, 255, 0.18);
-            --text-1:    #f2f2f0;
-            --text-2:    #a4a4a0;
-            --text-3:    #6c6c68;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; background: var(--bg); }
-
-        body {
-            font-family: 'Schibsted Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg);
-            color: var(--text-1);
-            overflow-x: hidden;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Luz suave que sigue al cursor (fija arriba en pantallas táctiles) */
-        #spotlight {
-            --x: 50%;
-            --y: 20%;
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            pointer-events: none;
-            background: radial-gradient(600px circle at var(--x) var(--y), rgba(110, 140, 255, 0.09), transparent 70%);
-        }
-
-        /* Cuadrícula que solo aparece alrededor del cursor */
-        #spotlight::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
-            background-size: 48px 48px;
-            -webkit-mask-image: radial-gradient(320px circle at var(--x) var(--y), #000, transparent 75%);
-                    mask-image: radial-gradient(320px circle at var(--x) var(--y), #000, transparent 75%);
-        }
-
-        section {
-            position: relative;
-            z-index: 1;
-        }
-
-        /* ─── HERO ───────────────────────────────── */
-        .hero {
-            min-height: 92vh;
-            display: flex;
-            align-items: center;
-            padding: 6rem 2rem;
-        }
-
-        .hero-content {
-            width: 100%;
-            max-width: 1040px;
-            margin: 0 auto;
-        }
-
-        /* Título arriba a la izquierda, nombre abajo a la derecha, en diagonal */
-        .hero-title {
-            font-size: clamp(3.6rem, 10vw, 8rem);
-            font-weight: 700;
-            letter-spacing: -0.035em;
-            line-height: 0.95;
-            margin-bottom: 1.25rem;
-            padding-bottom: 0.08em; /* que la "g" no se corte con el clip */
-        }
-
-        /* Barrido de luz sobre el título y el nombre */
-        .hero-title,
-        .hero-eyebrow {
-            --base: #c9c9c6;
-            background: linear-gradient(
-                105deg,
-                var(--base) 0%,
-                var(--base) 35%,
-                #ffffff 43%,
-                #8fa8ff 50%,
-                #ffffff 57%,
-                var(--base) 65%,
-                var(--base) 100%
-            );
-            background-size: 250% 100%;
-            background-position: 100% 0;
-            -webkit-background-clip: text;
-                    background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 18px rgba(110, 140, 255, 0.25));
-            animation: shine 4.5s ease-in-out infinite;
-        }
-
-        /* El nombre arranca un poco después, como si la luz bajara en diagonal */
-        .hero-eyebrow {
-            --base: #8f8f8c;
-            animation-delay: 0.6s;
-        }
-
-        @keyframes shine {
-            /* ~3,6 s de barrido lento y menos de 1 s de pausa */
-            0%        { background-position: 100% 0; }
-            80%, 100% { background-position: 0% 0; }
-        }
-
-        /* Nombre grande abajo a la derecha, en diagonal con el título */
-        .hero-content { position: relative; }
-
-        .hero-eyebrow {
-            display: block;
-            font-size: clamp(2rem, 7vw, 2.6rem);
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            line-height: 1;
-            color: var(--text-1);
-            margin: 0.5rem 0 2rem;
-        }
-
-        @media (min-width: 900px) {
-            .hero-eyebrow {
-                position: absolute;
-                right: 0;
-                bottom: 0;
-                margin: 0;
-                text-align: right;
-                font-size: clamp(2.6rem, 4.6vw, 4.2rem);
-                font-weight: 500;
-                color: var(--text-2);
-            }
-        }
-
-        .hero-title em { font-style: normal; color: var(--text-3); }
-
-        .hero-sub {
-            max-width: 560px;
-            font-size: clamp(1.05rem, 1.8vw, 1.2rem);
-            color: var(--text-2);
-            line-height: 1.6;
-            margin-bottom: 2.5rem;
-        }
-
-        .hero-ctas {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        /* ─── BUTTONS ─────────────────────────────── */
-        .btn-primary,
-        .btn-ghost {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.45rem;
-            padding: 0.7rem 1.35rem;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.92rem;
-            transition: background 0.15s, border-color 0.15s;
-        }
-
-        .btn-primary {
-            background: var(--text-1);
-            color: var(--bg);
-        }
-
-        .btn-primary:hover { background: #d8d8d4; }
-
-        .btn-ghost {
-            background: var(--bg);
-            color: var(--text-1);
-            border: 1px solid var(--border-md);
-        }
-
-        .btn-ghost:hover { border-color: var(--text-2); }
-
-        .scroll-cue { display: none; }
-
-        /* ─── SECTION COMMONS ─────────────────────── */
-        .section-eyebrow {
-            display: block;
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text-3);
-            margin-bottom: 0.5rem;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 4.5vw, 3rem);
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            line-height: 1.05;
-        }
-
-        .section-desc {
-            margin-top: 0.9rem;
-            max-width: 560px;
-            font-size: 1.05rem;
-            color: var(--text-2);
-        }
-
-        /* ─── ABOUT ──────────────────────────────── */
-        .about {
-            padding: 6rem 2rem;
-        }
-
-        .about-inner {
-            max-width: 1040px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2.5rem;
-        }
-
-        @media (min-width: 760px) {
-            .about-inner {
-                grid-template-columns: 220px 1fr;
-                gap: 4rem;
-                align-items: start;
-            }
-        }
-
-        .about-photo {
-            width: 100%;
-            max-width: 220px;
-            aspect-ratio: 1;
-            object-fit: cover;
-            border-radius: 8px;
-            display: block;
-        }
-
-        .about-content h2 {
-            font-size: clamp(2rem, 4.5vw, 3rem);
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            line-height: 1.05;
-            margin-bottom: 1.5rem;
-        }
-
-        .about-text {
-            max-width: 660px;
-            font-size: 1.05rem;
-            color: var(--text-2);
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-
-        .about-text strong { color: var(--text-1); font-weight: 600; }
-
-        .stats-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2.5rem;
-            margin-top: 2.5rem;
-        }
-
-        .stat-val {
-            display: block;
-            font-size: 2.2rem;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
-        }
-
-        .stat-val-sm { font-size: 2.2rem; }
-
-        .stat-lbl {
-            display: block;
-            font-size: 0.9rem;
-            color: var(--text-3);
-        }
-
-        /* ─── PROJECTS ───────────────────────────── */
-        .projects {
-            padding: 6rem 2rem;
-        }
-
-        .projects-inner {
-            max-width: 1040px;
-            margin: 0 auto;
-        }
-
-        .projects-header {
-            margin-bottom: 4rem;
-            text-align: center;
-        }
-
-        .projects-header .section-desc { margin-left: auto; margin-right: auto; }
-
-        .projects-list {
-            display: flex;
-            flex-direction: column;
-            gap: 6rem;
-        }
-
-        .project-item {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2.5rem;
-            align-items: center;
-        }
-
-        @media (min-width: 860px) {
-            .project-item {
-                grid-template-columns: 1fr 1fr;
-                gap: 4.5rem;
-            }
-            .project-item.rev .project-img-wrap { order: 1; }
-        }
-
-        .project-img-wrap {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            perspective: 1000px;
-            animation: float 7s ease-in-out infinite;
-        }
-
-        /* Cada imagen flota a destiempo */
-        .project-item:nth-child(3n+2) .project-img-wrap { animation-duration: 8s; animation-delay: -2.5s; }
-        .project-item:nth-child(3n+3) .project-img-wrap { animation-duration: 6.5s; animation-delay: -4s; }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50%      { transform: translateY(-14px) rotate(0.6deg); }
-        }
-
-        /* La inclinación la maneja JS con --rx / --ry */
-        .project-img-wrap > * {
-            transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
-            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-
-        .project-img {
-            width: auto;
-            max-width: min(440px, 100%);
-            max-height: 560px;
-            height: auto;
-            display: block;
-            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
-        }
-
-        /* Imágenes de baja resolución: estirar al ancho de la columna */
-        .project-img.fill { width: 100%; }
-
-        .project-nda-box {
-            width: 100%;
-            max-width: 440px;
-            aspect-ratio: 4 / 5;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .nda-icon { display: none; }
-
-        .nda-label {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text-3);
-        }
-
-        /* Project content */
-        .project-body {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-num {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--text-3);
-            margin-bottom: 0.4rem;
-        }
-
-        .project-name {
-            font-size: clamp(1.6rem, 3vw, 2.1rem);
-            font-weight: 700;
-            letter-spacing: -0.025em;
-            line-height: 1.15;
-            margin-bottom: 0.6rem;
-        }
-
-        .project-meta {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 0.35rem;
-            margin-bottom: 1.5rem;
-            font-size: 0.92rem;
-        }
-
-        .m-company { font-weight: 600; color: var(--text-1); }
-        .m-sep     { color: var(--text-3); }
-        .m-period  { color: var(--text-3); }
-        .m-role    { color: var(--text-2); }
-
-        .case-row {
-            padding: 0.85rem 0;
-            border-top: 1px solid var(--border);
-        }
-
-        .case-label {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text-1);
-            margin-bottom: 0.3rem;
-        }
-
-        .case-row p {
-            font-size: 0.97rem;
-            color: var(--text-2);
-            line-height: 1.7;
-        }
-
-        .tech-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            padding: 1rem 0 0;
-            border-top: 1px solid var(--border);
-        }
-
-        .tech-tag {
-            padding: 0.2rem 0.6rem;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            font-size: 0.82rem;
-            color: var(--text-2);
-        }
-
-        .action-row {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            padding-top: 1.25rem;
-        }
-
-        .proj-link {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.5rem 1rem;
-            background: var(--bg);
-            border: 1px solid var(--border-md);
-            border-radius: 6px;
-            font-size: 0.88rem;
-            font-weight: 600;
-            color: var(--text-1);
-            text-decoration: none;
-            transition: border-color 0.15s;
-        }
-
-        .proj-link:hover { border-color: var(--text-2); }
-        .proj-link.android { color: #3ddc84; }
-        .proj-link.android:hover { border-color: #3ddc84; }
-        .proj-link.ios { color: #4da3ff; }
-        .proj-link.ios:hover { border-color: #4da3ff; }
-
-        .proj-nda {
-            padding-top: 1.25rem;
-            font-size: 0.88rem;
-            color: var(--text-3);
-        }
-
-        /* ─── STACK ──────────────────────────────── */
-        .stack-section {
-            padding: 6rem 2rem;
-        }
-
-        .stack-inner {
-            max-width: 1040px;
-            margin: 0 auto;
-        }
-
-        .stack-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1px;
-            margin-top: 3rem;
-            background: var(--border);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .stack-card {
-            padding: 1.5rem;
-            background: var(--bg);
-        }
-
-        .cat-label {
-            display: block;
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .cat-items {
-            font-size: 0.95rem;
-            color: var(--text-2);
-            line-height: 1.7;
-        }
-
-        /* ─── CONTACT ────────────────────────────── */
-        .contact {
-            padding: 7rem 2rem 6rem;
-        }
-
-        .contact-inner {
-            max-width: 1040px;
-            margin: 0 auto;
-        }
-
-        .contact h2 {
-            font-size: clamp(2.2rem, 5.5vw, 4rem);
-            font-weight: 700;
-            letter-spacing: -0.035em;
-            line-height: 1.02;
-            margin-bottom: 1.25rem;
-        }
-
-        .contact-desc {
-            max-width: 560px;
-            font-size: 1.05rem;
-            color: var(--text-2);
-            line-height: 1.7;
-            margin-bottom: 2rem;
-        }
-
-        .contact-email {
-            display: inline-block;
-            font-size: clamp(1.1rem, 2.6vw, 1.5rem);
-            font-weight: 600;
-            color: var(--text-1);
-            text-decoration: underline;
-            text-decoration-color: var(--border-md);
-            text-underline-offset: 6px;
-            margin-bottom: 2rem;
-            cursor: pointer;
-            transition: text-decoration-color 0.15s;
-            overflow-wrap: anywhere;
-        }
-
-        .contact-email:hover { text-decoration-color: var(--text-1); }
-
-        .contact-links {
-            display: flex;
-            gap: 0.65rem;
-            flex-wrap: wrap;
-        }
-
-        /* ─── BACK TO TOP ─────────────────────────── */
-        .back-top {
-            position: fixed;
-            bottom: 1.5rem;
-            right: 1.5rem;
-            width: 42px;
-            height: 42px;
-            background: var(--bg-raised);
-            border: 1px solid var(--border-md);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            z-index: 100;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.25s, border-color 0.15s;
-        }
-
-        .back-top.show { opacity: 1; visibility: visible; }
-        .back-top:hover { border-color: var(--text-2); }
-        .back-top svg { width: 16px; height: 16px; fill: var(--text-2); }
-
-        /* ─── COPY NOTIF ──────────────────────────── */
-        .copy-notif {
-            position: fixed;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: var(--bg-raised);
-            border: 1px solid var(--border-md);
-            border-radius: 8px;
-            padding: 0.6rem 1rem;
-            font-size: 0.88rem;
-            color: var(--text-1);
-            z-index: 300;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.2s, visibility 0.2s;
-        }
-
-        .copy-notif.show { opacity: 1; visibility: visible; }
-
-        /* ─── SCROLL ANIMATIONS ───────────────────── */
-        .reveal {
-            opacity: 0;
-            transform: translateY(12px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        .reveal.in { opacity: 1; transform: translateY(0); }
-
-        @media (max-width: 600px) {
-            .hero, .about, .projects, .stack-section, .contact { padding-left: 1.25rem; padding-right: 1.25rem; }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .reveal { opacity: 1; transform: none; transition: none; }
-            .project-img-wrap { animation: none; }
-            .hero-title, .hero-eyebrow { animation: none; }
-        }
-    </style>
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
 </head>
 
 <body>
 
-    <div id="spotlight"></div>
+    <a href="#main" class="skip-link">Saltar al contenido</a>
+    <div id="spotlight" aria-hidden="true"></div>
+
+    <main id="main">
 
     <!-- HERO -->
     <section id="home" class="hero">
@@ -652,20 +35,20 @@
                 Todo en producción. No prototipos.
             </p>
             <div class="hero-ctas">
-                <a href="https://www.linkedin.com/in/adriel-rosales/" target="_blank" class="btn-ghost">LinkedIn ↗</a>
+                <a href="https://www.linkedin.com/in/adriel-rosales/" target="_blank" rel="noopener noreferrer" class="btn-ghost">LinkedIn ↗</a>
             </div>
         </div>
 
-        <a href="#about" class="scroll-cue">
+        <a href="#about" class="scroll-cue" aria-label="Ir a la sección Quién soy">
             <span></span>
-            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
         </a>
     </section>
 
     <!-- ABOUT -->
     <section id="about" class="about">
         <div class="about-inner">
-            <img src="./assets/perfil.jpeg" alt="Adriel Celso Rosales" class="about-photo">
+            <img width="1428" height="1599" loading="lazy" decoding="async" src="./assets/perfil.jpeg" alt="Adriel Celso Rosales" class="about-photo">
             <div class="about-content reveal">
                 <h2>Quién soy</h2>
                 <p class="about-text">
@@ -712,7 +95,7 @@
                 <!-- 01 Asistente RAG -->
                 <div class="project-item reveal">
                     <div class="project-img-wrap">
-                        <img src="./assets/Mockups/ia.png" alt="Asistente IA / RAG — panel de configuración y chat" class="project-img fill">
+                        <img width="891" height="538" loading="lazy" decoding="async" src="./assets/Mockups/ia.png" alt="Asistente IA / RAG — panel de configuración y chat" class="project-img fill">
                     </div>
                     <div class="project-body">
                         <span class="project-num">01</span>
@@ -755,7 +138,7 @@
                 <!-- 03 Essentid Wallet -->
                 <div class="project-item rev reveal">
                     <div class="project-img-wrap">
-                        <img src="./assets/Mockups/wallet.png" alt="Wallet Essentid — credenciales verificables" class="project-img">
+                        <img width="457" height="955" loading="lazy" decoding="async" src="./assets/Mockups/wallet.png" alt="Wallet Essentid — credenciales verificables" class="project-img">
                     </div>
                     <div class="project-body">
                         <span class="project-num">02</span>
@@ -799,7 +182,7 @@
                 <!-- 01 Identidad Digital -->
                 <div class="project-item reveal">
                     <div class="project-img-wrap">
-                        <img src="./assets/Mockups/identidaddigital.png" alt="Identidad Digital & KYC" class="project-img">
+                        <img width="347" height="719" loading="lazy" decoding="async" src="./assets/Mockups/identidaddigital.png" alt="Identidad Digital & KYC" class="project-img">
                     </div>
                     <div class="project-body">
                         <span class="project-num">03</span>
@@ -838,7 +221,7 @@
                 <!-- 03 Multas Digital -->
                 <div class="project-item rev reveal">
                     <div class="project-img-wrap">
-                        <img src="./assets/Mockups/multas.png" alt="Multas Digital" class="project-img fill">
+                        <img width="335" height="300" loading="lazy" decoding="async" src="./assets/Mockups/multas.png" alt="Multas Digital" class="project-img fill">
                     </div>
                     <div class="project-body">
                         <span class="project-num">04</span>
@@ -872,9 +255,9 @@
                         </div>
                         <p class="proj-nda">La documentación de este proyecto es privada.</p>
                         <div class="action-row">
-                            <a href="https://play.google.com/store/apps/details?id=com.encodelabs.fiscacheck&hl=es_AR" target="_blank" class="proj-link android">Play Store ↗</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.encodelabs.fiscacheck&hl=es_AR" target="_blank" rel="noopener noreferrer" class="proj-link android">Play Store ↗</a>
                             <!-- TODO: cargar enlace de App Store -->
-                            <a href="#" onclick="event.preventDefault()" class="proj-link ios">App Store ↗</a>
+                            <span class="proj-link ios" aria-disabled="true">App Store ↗</span>
                         </div>
                     </div>
                 </div>
@@ -882,7 +265,7 @@
                 <!-- 04 Clockit -->
                 <div class="project-item reveal">
                     <div class="project-img-wrap">
-                        <img src="./assets/Mockups/clockit.png" alt="Clockit" class="project-img">
+                        <img width="339" height="736" loading="lazy" decoding="async" src="./assets/Mockups/clockit.png" alt="Clockit" class="project-img">
                     </div>
                     <div class="project-body">
                         <span class="project-num">05</span>
@@ -918,8 +301,8 @@
                         </div>
                         <p class="proj-nda">La documentación de este proyecto es privada.</p>
                         <div class="action-row">
-                            <a href="https://play.google.com/store/apps/details?id=labs.encode.clockit" target="_blank" class="proj-link android">Play Store ↗</a>
-                            <a href="https://apps.apple.com/ar/app/clockit/id6474617227" target="_blank" class="proj-link ios">App Store ↗</a>
+                            <a href="https://play.google.com/store/apps/details?id=labs.encode.clockit" target="_blank" rel="noopener noreferrer" class="proj-link android">Play Store ↗</a>
+                            <a href="https://apps.apple.com/ar/app/clockit/id6474617227" target="_blank" rel="noopener noreferrer" class="proj-link ios">App Store ↗</a>
                         </div>
                     </div>
                 </div>
@@ -927,10 +310,7 @@
                 <!-- 02 Aplivit -->
                 <div class="project-item rev reveal">
                     <div class="project-img-wrap">
-                        <div class="project-nda-box">
-                            <div class="nda-icon">🛠️</div>
-                            <span class="nda-label">En desarrollo</span>
-                        </div>
+                        <img width="1024" height="1536" loading="lazy" decoding="async" src="./assets/Mockups/aplivit.png" alt="Aplivit — lección de inglés con la palabra Apple y botón de audio" class="project-img">
                     </div>
                     <div class="project-body">
                         <span class="project-num">06</span>
@@ -963,7 +343,7 @@
                             <span class="tech-tag">iOS</span>
                         </div>
                         <div class="action-row">
-                            <a href="https://github.com/ADRIELCELSOROSALES/KMPaplivit" target="_blank" class="proj-link hi">Ver proyecto ↗</a>
+                            <a href="https://github.com/ADRIELCELSOROSALES/KMPaplivit" target="_blank" rel="noopener noreferrer" class="proj-link hi">Ver proyecto ↗</a>
                         </div>
                     </div>
                 </div>
@@ -971,7 +351,7 @@
                 <!-- 02 Reverso -->
                 <div class="project-item reveal">
                     <div class="project-img-wrap">
-                        <img src="./assets/Mockups/reverso.png" alt="Reverso — auditoría de apps móviles" class="project-img">
+                        <img width="1200" height="792" loading="lazy" decoding="async" src="./assets/Mockups/reverso.png" alt="Reverso — auditoría de apps móviles" class="project-img">
                     </div>
                     <div class="project-body">
                         <span class="project-num">07</span>
@@ -1007,7 +387,7 @@
                             <span class="tech-tag">Claude API</span>
                         </div>
                         <div class="action-row">
-                            <a href="https://www.linkedin.com/posts/adriel-rosales_cybersecurity-mobilesecurity-reverseengineering-ugcPost-7500578952587939840-wKM5/" target="_blank" class="proj-link hi">Ver publicación ↗</a>
+                            <a href="https://www.linkedin.com/posts/adriel-rosales_cybersecurity-mobilesecurity-reverseengineering-ugcPost-7500578952587939840-wKM5/" target="_blank" rel="noopener noreferrer" class="proj-link hi">Ver publicación ↗</a>
                         </div>
                     </div>
                 </div>
@@ -1015,8 +395,8 @@
                 <!-- 05 Phoenix -->
                 <div class="project-item rev reveal">
                     <div class="project-img-wrap">
-                        <a href="https://accesscontrol.biz/metodos-de-control-de-acceso/" target="_blank">
-                            <img src="./assets/Mockups/phoenix1.png" alt="Access Control — Terminal de Acceso Biométrico" class="project-img">
+                        <a href="https://accesscontrol.biz/metodos-de-control-de-acceso/" target="_blank" rel="noopener noreferrer">
+                            <img width="1056" height="1275" loading="lazy" decoding="async" src="./assets/Mockups/phoenix1.png" alt="Access Control — Terminal de Acceso Biométrico" class="project-img">
                         </a>
                     </div>
                     <div class="project-body">
@@ -1052,7 +432,7 @@
                             <span class="tech-tag">Clean Architecture</span>
                         </div>
                         <div class="action-row">
-                            <a href="https://accesscontrol.biz/metodos-de-control-de-acceso/" target="_blank" class="proj-link hi">Ver proyecto ↗</a>
+                            <a href="https://accesscontrol.biz/metodos-de-control-de-acceso/" target="_blank" rel="noopener noreferrer" class="proj-link hi">Ver proyecto ↗</a>
                         </div>
                     </div>
                 </div>
@@ -1060,7 +440,7 @@
                 <!-- 06 Migración -->
                 <div class="project-item reveal">
                     <div class="project-img-wrap">
-                        <img src="./assets/Mockups/access.png" alt="Access Control" class="project-img">
+                        <img width="747" height="893" loading="lazy" decoding="async" src="./assets/Mockups/access.png" alt="Access Control" class="project-img">
                     </div>
                     <div class="project-body">
                         <span class="project-num">09</span>
@@ -1094,8 +474,8 @@
                             <span class="tech-tag">iOS</span>
                         </div>
                         <div class="action-row">
-                            <a href="https://play.google.com/store/search?q=access%20control&c=apps&hl=es_US" target="_blank" class="proj-link android">Play Store ↗</a>
-                            <a href="https://apps.apple.com/us/app/access-control-app-m%C3%B3vil/id6470677214" target="_blank" class="proj-link ios">App Store ↗</a>
+                            <a href="https://play.google.com/store/search?q=access%20control&c=apps&hl=es_US" target="_blank" rel="noopener noreferrer" class="proj-link android">Play Store ↗</a>
+                            <a href="https://apps.apple.com/us/app/access-control-app-m%C3%B3vil/id6470677214" target="_blank" rel="noopener noreferrer" class="proj-link ios">App Store ↗</a>
                         </div>
                     </div>
                 </div>
@@ -1103,7 +483,7 @@
                 <!-- 07 Vending -->
                 <div class="project-item rev reveal">
                     <div class="project-img-wrap">
-                        <img src="./assets/Mockups/vending.png" alt="Vending Control" class="project-img">
+                        <img width="797" height="885" loading="lazy" decoding="async" src="./assets/Mockups/vending.png" alt="Vending Control" class="project-img">
                     </div>
                     <div class="project-body">
                         <span class="project-num">10</span>
@@ -1134,7 +514,7 @@
                             <span class="tech-tag">Clean Architecture</span>
                         </div>
                         <div class="action-row">
-                            <a href="https://play.google.com/store/search?q=vending%20control&c=apps&hl=es_US" target="_blank" class="proj-link android">Play Store ↗</a>
+                            <a href="https://play.google.com/store/search?q=vending%20control&c=apps&hl=es_US" target="_blank" rel="noopener noreferrer" class="proj-link android">Play Store ↗</a>
                         </div>
                     </div>
                 </div>
@@ -1142,7 +522,7 @@
                 <!-- 08 Gate Keeper -->
                 <div class="project-item reveal">
                     <div class="project-img-wrap">
-                        <img src="./assets/Mockups/gk.png" alt="Gate Keeper" class="project-img">
+                        <img width="1280" height="960" loading="lazy" decoding="async" src="./assets/Mockups/gk.png" alt="Gate Keeper" class="project-img">
                     </div>
                     <div class="project-body">
                         <span class="project-num">11</span>
@@ -1172,10 +552,11 @@
                     </div>
                 </div>
 
-                <!-- 09 Banking -->
+                <!-- 09 Banking (oculto) -->
+                <!--
                 <div class="project-item rev reveal">
                     <div class="project-img-wrap">
-                        <img src="./assets/Mockups/bank menu-Photoroom.png" alt="App Bancaria" class="project-img">
+                        <img width="1280" height="1099" loading="lazy" decoding="async" src="./assets/Mockups/bank menu-Photoroom.png" alt="App Bancaria" class="project-img">
                     </div>
                     <div class="project-body">
                         <span class="project-num">12</span>
@@ -1204,11 +585,13 @@
                         <p class="proj-nda">La documentación de este proyecto es privada.</p>
                     </div>
                 </div>
+                -->
 
-                <!-- 10 ChatBot -->
+                <!-- 10 ChatBot (oculto) -->
+                <!--
                 <div class="project-item reveal">
                     <div class="project-img-wrap">
-                        <img src="./assets/Mockups/ChatBot.png" alt="ChatBot con IA" class="project-img">
+                        <img width="715" height="650" loading="lazy" decoding="async" src="./assets/Mockups/ChatBot.png" alt="ChatBot con IA" class="project-img">
                     </div>
                     <div class="project-body">
                         <span class="project-num">13</span>
@@ -1235,16 +618,17 @@
                             <span class="tech-tag">AI / LLM</span>
                         </div>
                         <div class="action-row">
-                            <a href="https://github.com/ADRIELCELSOROSALES/chatIA" target="_blank" class="proj-link">GitHub ↗</a>
+                            <a href="https://github.com/ADRIELCELSOROSALES/chatIA" target="_blank" rel="noopener noreferrer" class="proj-link">GitHub ↗</a>
                         </div>
                     </div>
                 </div>
+                -->
 
                 <!-- 11 CVP (oculto) -->
                 <!--
                 <div class="project-item rev reveal">
                     <div class="project-img-wrap">
-                        <img src="./assets/Mockups/capavial.png" alt="Capa Vial Predictiva" class="project-img">
+                        <img width="335" height="745" loading="lazy" decoding="async" src="./assets/Mockups/capavial.png" alt="Capa Vial Predictiva" class="project-img">
                     </div>
                     <div class="project-body">
                         <span class="project-num">14</span>
@@ -1280,8 +664,8 @@
                             <span class="tech-tag">Clean Architecture</span>
                         </div>
                         <div class="action-row">
-                            <a href="https://github.com/ADRIELCELSOROSALES/MemoriaVial-Android" target="_blank" class="proj-link android">Ver proyecto en Android ↗</a>
-                            <a href="https://github.com/ADRIELCELSOROSALES/MemoriaVial-iOS" target="_blank" class="proj-link ios">Ver proyecto en iOS ↗</a>
+                            <a href="https://github.com/ADRIELCELSOROSALES/MemoriaVial-Android" target="_blank" rel="noopener noreferrer" class="proj-link android">Ver proyecto en Android ↗</a>
+                            <a href="https://github.com/ADRIELCELSOROSALES/MemoriaVial-iOS" target="_blank" rel="noopener noreferrer" class="proj-link ios">Ver proyecto en iOS ↗</a>
                         </div>
                     </div>
                 </div>
@@ -1336,96 +720,27 @@
                 Trabajo con equipos que buscan un engineer con criterio y velocidad de delivery.
                 Si tenés un proyecto real — producto, startup o empresa — hablemos.
             </p>
-            <a href="#" onclick="copyEmail(event)" class="contact-email">
+            <a href="#" class="contact-email" role="button" aria-label="Copiar email al portapapeles: adrielrosales1999@gmail.com">
                 adrielrosales1999@gmail.com
             </a>
             <div class="contact-links">
-                <a href="https://www.linkedin.com/in/adriel-rosales/" target="_blank" class="btn-ghost">LinkedIn ↗</a>
-                <a href="https://github.com/ADRIELCELSOROSALES" target="_blank" class="btn-ghost">GitHub ↗</a>
+                <a href="https://www.linkedin.com/in/adriel-rosales/" target="_blank" rel="noopener noreferrer" class="btn-ghost">LinkedIn ↗</a>
+                <a href="https://github.com/ADRIELCELSOROSALES" target="_blank" rel="noopener noreferrer" class="btn-ghost">GitHub ↗</a>
             </div>
         </div>
     </section>
 
+    </main>
+
     <!-- Back to top -->
-    <a href="#home" class="back-top" id="backTop">
-        <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    <a href="#home" class="back-top" id="backTop" aria-label="Volver arriba">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
     </a>
 
     <!-- Copy notification -->
-    <div class="copy-notif" id="copyNotif">Email copiado al portapapeles</div>
+    <div class="copy-notif" id="copyNotif" role="status" aria-live="polite">Email copiado al portapapeles</div>
 
-    <script>
-        // Luz que sigue al cursor (solo con mouse)
-        const spotlight = document.getElementById('spotlight');
-        if (window.matchMedia('(pointer: fine)').matches) {
-            let spotPending = false;
-            window.addEventListener('mousemove', e => {
-                if (spotPending) return;
-                spotPending = true;
-                requestAnimationFrame(() => {
-                    spotlight.style.setProperty('--x', e.clientX + 'px');
-                    spotlight.style.setProperty('--y', e.clientY + 'px');
-                    spotPending = false;
-                });
-            }, { passive: true });
-        }
-
-        // Inclinación 3D de las imágenes siguiendo al mouse
-        if (window.matchMedia('(pointer: fine)').matches &&
-            !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            document.querySelectorAll('.project-img-wrap').forEach(wrap => {
-                const target = wrap.firstElementChild;
-                wrap.addEventListener('mousemove', e => {
-                    const r = wrap.getBoundingClientRect();
-                    const px = (e.clientX - r.left) / r.width - 0.5;
-                    const py = (e.clientY - r.top) / r.height - 0.5;
-                    target.style.setProperty('--ry', (px * 14) + 'deg');
-                    target.style.setProperty('--rx', (-py * 14) + 'deg');
-                });
-                wrap.addEventListener('mouseleave', () => {
-                    target.style.setProperty('--ry', '0deg');
-                    target.style.setProperty('--rx', '0deg');
-                });
-            });
-        }
-
-        // Copy email to clipboard
-        function copyEmail(e) {
-            e.preventDefault();
-            navigator.clipboard.writeText('adrielrosales1999@gmail.com').then(() => {
-                const n = document.getElementById('copyNotif');
-                n.classList.add('show');
-                setTimeout(() => n.classList.remove('show'), 2500);
-            });
-        }
-
-        // Scroll-triggered reveal
-        const observer = new IntersectionObserver(
-            entries => entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.classList.add('in');
-                    observer.unobserve(e.target);
-                }
-            }),
-            { threshold: 0.08, rootMargin: '0px 0px -48px 0px' }
-        );
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // Back to top visibility
-        window.addEventListener('scroll', () => {
-            document.getElementById('backTop').classList.toggle('show', window.scrollY > 400);
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', e => {
-                const href = a.getAttribute('href');
-                if (href === '#') return;
-                const target = document.querySelector(href);
-                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-            });
-        });
-    </script>
+    <script type="module" src="js/main.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,10 @@
+:root {
+    --bg:        #0e0f11;
+    --bg-raised: #16171a;
+    --surface:   rgba(255, 255, 255, 0.035);
+    --border:    rgba(255, 255, 255, 0.08);
+    --border-md: rgba(255, 255, 255, 0.18);
+    --text-1:    #f2f2f0;
+    --text-2:    #a4a4a0;
+    --text-3:    #8c8c88;
+}
