@@ -17,7 +17,7 @@
     color: var(--bg);
 }
 
-.btn-primary:hover { background: #d8d8d4; }
+.btn-primary:hover { background: var(--btn-hover); }
 
 .btn-ghost {
     background: var(--bg);
@@ -191,7 +191,7 @@
     max-height: 560px;
     height: auto;
     display: block;
-    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0 20px 40px var(--img-shadow));
 }
 
 /* Imágenes de baja resolución: estirar al ancho de la columna */
@@ -310,10 +310,10 @@
 }
 
 .proj-link:hover { border-color: var(--text-2); }
-.proj-link.android { color: #3ddc84; }
-.proj-link.android:hover { border-color: #3ddc84; }
-.proj-link.ios { color: #4da3ff; }
-.proj-link.ios:hover { border-color: #4da3ff; }
+.proj-link.android { color: var(--android); }
+.proj-link.android:hover { border-color: var(--android); }
+.proj-link.ios { color: var(--ios); }
+.proj-link.ios:hover { border-color: var(--ios); }
 
 .proj-nda {
     padding-top: 1.25rem;
@@ -435,7 +435,7 @@
 /* ─── COPY NOTIF ──────────────────────────── */
 .copy-notif {
     position: fixed;
-    top: 1.5rem;
+    top: 4.5rem;
     right: 1.5rem;
     background: var(--bg-raised);
     border: 1px solid var(--border-md);
@@ -450,6 +450,56 @@
 }
 
 .copy-notif.show { opacity: 1; visibility: visible; }
+
+/* ─── SITE CONTROLS (idioma + tema) ───────── */
+.site-controls {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.25rem;
+    background: var(--bg-raised);
+    border: 1px solid var(--text-3);
+    border-radius: 10px;
+    opacity: 0.92;
+    transition: opacity 0.2s;
+}
+
+.site-controls:hover,
+.site-controls:focus-within { opacity: 1; }
+
+.lang-switch { display: flex; gap: 0.15rem; }
+
+.ctl-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 34px;
+    height: 34px;
+    padding: 0 0.5rem;
+    background: transparent;
+    color: var(--text-2);
+    border: 0;
+    border-radius: 7px;
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.ctl-btn:hover { color: var(--text-1); }
+.ctl-btn[data-lang][aria-pressed="true"] { background: var(--text-1); color: var(--bg); }
+.theme-toggle { border-left: 1px solid var(--border); border-radius: 0 7px 7px 0; margin-left: 0.1rem; }
+.theme-toggle svg { width: 18px; height: 18px; fill: currentColor; }
+/* aria-pressed="true" = tema oscuro: se muestra la luna */
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle[aria-pressed="false"] .icon-sun { display: block; }
+.theme-toggle[aria-pressed="false"] .icon-moon { display: none; }
 
 @media (max-width: 600px) {
     .hero, .about, .projects, .stack-section, .contact { padding-left: 1.25rem; padding-right: 1.25rem; }

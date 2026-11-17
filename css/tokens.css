@@ -1,4 +1,5 @@
 :root {
+    color-scheme: dark;
     --bg:        #0e0f11;
     --bg-raised: #16171a;
     --surface:   rgba(255, 255, 255, 0.035);
@@ -7,4 +8,42 @@
     --text-1:    #f2f2f0;
     --text-2:    #a4a4a0;
     --text-3:    #8c8c88;
+
+    --focus:       #8fa8ff;
+    --btn-hover:   #d8d8d4;
+    --android:     #3ddc84;
+    --ios:         #4da3ff;
+    --img-shadow:  rgba(0, 0, 0, 0.5);
+    --spot-glow:   rgba(110, 140, 255, 0.09);
+    --grid-line:   rgba(255, 255, 255, 0.07);
+    --hero-base:   #c9c9c6;
+    --hero-base-2: #8f8f8c;
+    --hero-hi:     #ffffff;
+    --hero-accent: #8fa8ff;
+    --hero-glow:   rgba(110, 140, 255, 0.25);
+}
+
+:root[data-theme="light"] {
+    color-scheme: light;
+    --bg:        #f6f6f3;
+    --bg-raised: #ffffff;
+    --surface:   rgba(0, 0, 0, 0.035);
+    --border:    rgba(0, 0, 0, 0.12);
+    --border-md: rgba(0, 0, 0, 0.45);
+    --text-1:    #16171a;
+    --text-2:    #46464a;
+    --text-3:    #5c5c60;
+
+    --focus:       #2f4fd0;
+    --btn-hover:   #34353a;
+    --android:     #0a6b36;
+    --ios:         #0a5ab8;
+    --img-shadow:  rgba(20, 24, 40, 0.3);
+    --spot-glow:   rgba(60, 90, 220, 0.10);
+    --grid-line:   rgba(0, 0, 0, 0.08);
+    --hero-base:   #3c3d41;
+    --hero-base-2: #5c5c60;
+    --hero-hi:     #000000;
+    --hero-accent: #2f4fd0;
+    --hero-glow:   rgba(47, 79, 208, 0.12);
 }
